@@ -6,14 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        
+        img{
+            width: 800px;
+            height: 600px;
+        }
     </style>
 </head>
 <body>
-    
+    <img src="https://i.imgur.com/Qsi6WFg.jpg" alt="" class="pic1">
+    <!-- <img src="https://i.imgur.com/veiqcMC.jpg" alt="" class="pic2"> -->
 
     <script>
-
+        var img = document.querySelector('img')
+        
+        var a = 'https://i.imgur.com/Qsi6WFg.jpg'
+        var b = 'https://i.imgur.com/veiqcMC.jpg'
+        //是不是黃色的.onclick沒有關係
+        img.onclick = function () {
+            //可以這樣取，用.的方式
+            if (img.src == a) {  //  img == a 等於    img = a 給值
+                img.src = b
+                console.log('圖片1');
+            }else{
+                console.log('圖片2');
+                img.src = a
+            }
+            
+        }
 
 
     </script>
