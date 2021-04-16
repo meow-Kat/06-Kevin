@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            margin: 0;
+        }
+
+        .tab-area{
+            width: 80%;
+            padding: 20px;
+            background-color: antiquewhite;
+            margin: auto;
+        }
+
+        .tab-btn-group{
+            width: 100%;
+            padding: 20px;
+            background-color: cornsilk;
+
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .tab-btn{
+            width: 160px;
+            height: 40px;
+            background-color: cyan;
+            text-align: center;
+            line-height: 40px;
+            font-size: 24px;
+            font-weight: 900;
+
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .tab-btn.active{
+            background-color: red;
+        }
+
+        .tab-btn:hover{
+            background-color:rgb(3, 167, 167);
+        }
+
+        .tab-content{
+            background-color: darkgray;
+            padding: 5px 0;
+            display: none;
+        }
+
+        .tab-content.active{
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab-area">
+        <div class="tab-btn-group">
+            <div class="tab-btn">按鈕1</div>
+            <div class="tab-btn">按鈕2</div>
+            <div class="tab-btn">按鈕3</div>
+        </div>
+        <div class="tab-content-group">
+            <div class="tab-content">
+                <h1>內容1</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates aspernatur sunt tempora impedit
+                    unde veniam nostrum nisi. Doloribus, tenetur magni atque numquam enim quam illum corporis fugiat
+                    aliquid, maiores obcaecati.</p>
+            </div>
+
+            <div class="tab-content">
+                <h1>內容2</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates aspernatur sunt tempora impedit
+                    unde veniam nostrum nisi. Doloribus, tenetur magni atque numquam enim quam illum corporis fugiat
+                    aliquid, maiores obcaecati.</p>
+            </div>
+
+            <div class="tab-content">
+                <h1>內容3</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates aspernatur sunt tempora impedit
+                    unde veniam nostrum nisi. Doloribus, tenetur magni atque numquam enim quam illum corporis fugiat
+                    aliquid, maiores obcaecati.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+ var tab_btn = document.querySelectorAll('.tab_btn')
+        var btn1 = document.querySelector('#btn1')
+        var btn2 = document.querySelector('#btn2')
+        var btn3 = document.querySelector('#btn3')
+
+        var content1 = document.querySelector('#content1')
+        var content2 = document.querySelector('#content2')
+        var content3 = document.querySelector('#content3')
+
+        // console.log(tab_btn);
+        // tab_btn.onclick = function () {
+        //     content1.classList.add('active')
+
+        // } 
+        
+        btn1.onclick= function () {
+            btn1.classList.add('active')
+            content1.classList.add('active')
+            
+            btn2.classList.remove('active')
+            content2.classList.remove('active')
+
+            btn3.classList.remove('active')
+            content3.classList.remove('active')
+        }
+
+        btn2.onclick= function () {
+            btn2.classList.add('active')
+            content2.classList.add('active')
+            
+            btn1.classList.remove('active')
+            content1.classList.remove('active')
+
+            btn3.classList.remove('active')
+            content3.classList.remove('active')
+        }
+
+        btn3.onclick= function () {
+            btn3.classList.add('active')
+            content3.classList.add('active')
+            
+            btn2.classList.remove('active')
+            content2.classList.remove('active')
+
+            btn1.classList.remove('active')
+            content1.classList.remove('active')
+        }
+
+
+    </script>
+</body>
+
+</html>
