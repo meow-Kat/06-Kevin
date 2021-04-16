@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .tab-area {
+            width: 80%;
+            padding: 20px;
+            background-color: antiquewhite;
+            margin: auto;
+        }
+
+        .tab-btn-group {
+            width: 100%;
+            padding: 20px;
+            background-color: cornsilk;
+
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .tab-btn {
+            width: 160px;
+            height: 40px;
+            background-color: cyan;
+            text-align: center;
+            line-height: 40px;
+            font-size: 24px;
+            font-weight: 900;
+
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .tab-btn.active {
+            background-color: red;
+        }
+
+        .tab-btn:hover {
+            background-color: rgb(3, 167, 167);
+        }
+
+        .tab-content {
+            background-color: darkgray;
+            padding: 5px 0;
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab-area">
+        <div class="tab-btn-group">
+            <div id="btn-1" class="tab-btn">按鈕1</div>
+            <div id="btn-2" class="tab-btn">按鈕2</div>
+            <div id="btn-3" class="tab-btn">按鈕3</div>
+            <div id="btn-4" class="tab-btn">按鈕4</div>
+            <div id="btn-5" class="tab-btn">按鈕5</div>
+            <div id="btn-6" class="tab-btn">按鈕6</div>
+        </div>
+        <div class="tab-content-group">
+            <div id="content-1" class="tab-content">
+                <h1>內容1</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates aspernatur sunt tempora impedit
+                    unde veniam nostrum nisi. Doloribus, tenetur magni atque numquam enim quam illum corporis fugiat
+                    aliquid, maiores obcaecati.</p>
+            </div>
+
+            <div id="content-2" class="tab-content">
+                <h1>內容2</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates aspernatur sunt tempora impedit
+                    unde veniam nostrum nisi. Doloribus, tenetur magni atque numquam enim quam illum corporis fugiat
+                    aliquid, maiores obcaecati.</p>
+            </div>
+
+            <div id="content-3" class="tab-content">
+                <h1>內容3</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates aspernatur sunt tempora impedit
+                    unde veniam nostrum nisi. Doloribus, tenetur magni atque numquam enim quam illum corporis fugiat
+                    aliquid, maiores obcaecati.</p>
+            </div>
+
+            <div id="content-4" class="tab-content">
+                <h1>內容4</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates aspernatur sunt tempora impedit
+                    unde veniam nostrum nisi. Doloribus, tenetur magni atque numquam enim quam illum corporis fugiat
+                    aliquid, maiores obcaecati.</p>
+            </div>
+
+            <div id="content-5" class="tab-content">
+                <h1>內容5</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates aspernatur sunt tempora impedit
+                    unde veniam nostrum nisi. Doloribus, tenetur magni atque numquam enim quam illum corporis fugiat
+                    aliquid, maiores obcaecati.</p>
+            </div>
+
+            <div id="content-6" class="tab-content">
+                <h1>內容6</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates aspernatur sunt tempora impedit
+                    unde veniam nostrum nisi. Doloribus, tenetur magni atque numquam enim quam illum corporis fugiat
+                    aliquid, maiores obcaecati.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var btns = document.querySelectorAll('.tab-btn')
+        var contents = document.querySelectorAll('.tab-content')
+        
+
+        for (let index = 0; index < btns.length; index++) {
+            btns[index].onclick = function(){
+                btns[index].classList.add('active')
+            }
+        }
+        
+    </script>
+</body>
+
+</html>
