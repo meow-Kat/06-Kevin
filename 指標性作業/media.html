@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            display: flex;
+        }
+
+        a{
+            color: unset;
+            text-decoration: none;
+        }
+
+        nav {
+            background-color: chocolate;
+            width: 300px;
+            height: 100vh;
+            box-sizing: border-box;
+
+        }
+
+        main {
+            background-color: palevioletred;
+            height: 100vh;
+            width: calc(100% - 300px);
+            box-sizing: border-box;
+        }
+
+        nav .container {
+            padding: 200px 10%;
+            height: 100%;
+        }
+
+        main .container {
+            margin: auto;
+            width: 880px;
+            padding: 200px 0px;
+            align-self: center;
+            height: 100%;
+        }
+
+        .logobox {
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            background-image: url(https://www.fichet.org.tw/wp-content/uploads/2020/04/banner_covid19-1-1024x550-1-980x550.jpg);
+            background-position: center;
+            background-size: cover;
+            width: 240px;
+            height: 240px;
+        }
+
+        .logotext {
+            text-align: center;
+            background-color: rgb(57, 3, 250);
+            margin: unset;
+            color: whitesmoke;
+        }
+
+        .btn {
+            width: 100%;
+            background-color: darkgrey;
+            margin-bottom: 10px;
+            text-align: center;
+            padding: 10px;
+            font-size: 26px;
+            color: white;
+            border-radius: 0;
+            border: 2px solid darkgray;
+        }
+
+        .box {
+            width: 100%;
+            height: 500px;
+            /* background-color: #fff; */
+            display: flex;
+            align-items: center;
+            line-height: 500px;
+            color: white;
+        }
+
+        .img {
+            width: 33%;
+            height: 100%;
+            text-align: center;
+            font-size: 26px;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .img:hover {
+            opacity: 0.7;
+            border: 2px solid black;
+            color: violet;
+            transition: 0.2s;
+        }
+
+
+
+
+        .btn:hover {
+            transition: 0.5s;
+            border: 2px solid black;
+            color: black;
+        }
+
+
+
+        .X {
+            background-color: darkcyan;
+            background-image: url(https://images.chinatimes.com/newsphoto/2020-07-07/656/B08A00_P_03_02.jpg);
+        }
+
+        .Y {
+            background-color: rgb(111, 0, 139);
+            margin: 0 0.5%;
+            background-image: url(https://s.newtalk.tw/album/news/377/5e704d3f234c6.png);
+        }
+
+        .Z {
+            background-color: rgb(139, 79, 0);
+            background-image: url(https://images.chinatimes.com/newsphoto/2021-01-09/656/20210109001994.jpg);
+        }
+
+        @media(max-width:1280px) {
+            main .container {
+                margin: auto;
+                width: 750px;
+            }
+
+            .box {
+                width: 100%;
+                line-height: 250px;
+                align-items: center;
+                display: block;
+
+            }
+
+            .X {
+                width: 100%;
+                margin-bottom: 10px;
+                height: calc(50% - 10px);
+            }
+
+            .Y,
+            .Z {
+                width: calc(50% - 5px);
+                height: 50%;
+                float: left;
+                margin: 0;
+            }
+
+            .Z {
+                margin-left: 10px;
+            }
+        }
+
+        @media(max-width:1055px) {
+
+            body {
+                display: block;
+            }
+
+            nav {
+                background-color: chocolate;
+                width: 100%;
+                height: 140px;
+
+            }
+
+            nav .container {
+                padding: 0px 10%;
+                display: flex;
+                height: 100%;
+            }
+
+            .logobox {
+                margin: unset;
+            }
+
+            .logo {
+                width: 100px;
+                height: 100px;
+                margin: 10px 10px 0;
+            }
+
+            .btns {
+                display: flex;
+                margin-left: auto;
+            }
+
+            .btn {
+                width: 100px;
+                margin: 40px 5px;
+                border-radius: 15px;
+                line-height: 40px;
+            }
+
+            main {
+                width: 100%;
+                height: calc(100vh - 140px);
+            }
+
+            main .container {
+                width: 100%;
+                padding: calc(calc(100vh - 940px) / 2) 10%;
+                height: 100%;
+                margin: 0;
+            }
+
+            .btn-box {
+                display: flex;
+            }
+
+            .box {
+                line-height: 250px;
+                align-items: center;
+                padding: 0;
+                margin: 0;
+                width: 100%;
+                height: 800px;
+            }
+
+
+
+        }
+
+
+
+        @media(max-width:590px) {
+
+            nav {
+                height: 120px;
+            }
+
+            nav .container {
+                display: unset;
+                width: 100%;
+                padding: 0;
+            }
+
+            .logobox {
+                height: 100%;
+                width: max-content;
+                margin: auto;
+                padding: 2% 0;
+            }
+
+            .logo {
+                width: 80px;
+                height: 80px;
+                margin: auto;
+            }
+
+
+
+            .btns {
+                margin: 0;
+                position: absolute;
+                background-image: url(http://jkrzywon.pl/images/mobile-menu.png);
+                background-position: center;
+                background-size: cover;
+                top: 30px;
+                left: 10%;
+                width: 60px;
+                height: 60px;
+
+            }
+
+
+
+
+            .btn-box {
+                height: 332px;
+                position: absolute;
+                top: 0px;
+                left: 60px;
+                width: max-content;
+                display: none;
+                padding-top: 120px;
+            }
+
+
+
+            .btn {
+                margin: 0;
+
+                color: white;
+            }
+
+
+            main {
+                width: 100%;
+                height: calc(100vh - 120px);
+            }
+
+            main .container {
+                width: 100%;
+                padding: 0;
+            }
+
+            .box {
+                line-height: 250px;
+                align-items: center;
+                padding: 0;
+                margin: 0;
+                width: 100%;
+            }
+
+            .img {
+                width: 100%;
+                height: 33%;
+                text-align: center;
+                font-size: 26px;
+                background-position: center;
+                background-size: cover;
+                margin: 0;
+            }
+
+            .btns:hover+.btn-box {
+                transition: 1s;
+                color: black;
+                display: block;
+            }
+
+            .btn-box:hover {
+                display: block;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <div class="logobox">
+                <div class="logo"></div>
+                <div class="logotext">猜猜誰是罪魁禍首</div>
+            </div>
+            <div class="btns"></div>
+            <div class="btn-box">
+                <a
+                    href="https://www.google.com/search?q=WHO&tbm=isch&sxsrf=ALeKk01THLKTZD78GsiC32Iyze6jVKNyPA:1617808815293&source=lnms&sa=X&ved=0ahUKEwivzP-9t-zvAhW6xosBHanMB8MQ_AUIECgC&biw=1536&bih=722&dpr=1.25">
+                    <div class="btn">WHO</div>
+                </a>
+                <a
+                    href="https://www.google.com/search?q=%E4%B8%AD%E5%9C%8B%E8%82%BA%E7%82%8E%E6%A2%97%E5%9C%96&tbm=isch&ved=2ahUKEwj9ia3ht-zvAhWMAKYKHXWeDOIQ2-cCegQIABAA&oq=%E4%B8%AD%E5%9C%8B%E8%82%BA%E7%82%8E%E6%A2%97%E5%9C%96&gs_lcp=CgNpbWcQARgAMgIIAFCvCFiKFWC9HWgAcAB4AIABSIgBuQKSAQE2mAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=-c1tYL2pGoyBmAX1vLKQDg&bih=722&biw=1536">
+                    <div class="btn">支那</div>
+                </a>
+                <a
+                    href="https://www.google.com/search?q=%E7%B1%B3%E5%9C%8B&tbm=isch&ved=2ahUKEwiq2bD7t-zvAhVoGKYKHYjnBDEQ2-cCegQIABAA&oq=%E7%B1%B3%E5%9C%8B&gs_lcp=CgNpbWcQAzICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAMgIIADICCAA6BQgAELEDOgQIABAYUI8RWP4XYO0aaABwAHgAgAFBiAHGApIBATeYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&sclient=img&ei=MM5tYKqBAeiwmAWIz5OIAw&bih=722&biw=1536">
+                    <div class="btn">米國</div>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="container">
+            <div class="box">
+                <div class="X img">
+                    <a
+                        href="https://www.google.com/search?q=WHO&tbm=isch&sxsrf=ALeKk01THLKTZD78GsiC32Iyze6jVKNyPA:1617808815293&source=lnms&sa=X&ved=0ahUKEwivzP-9t-zvAhW6xosBHanMB8MQ_AUIECgC&biw=1536&bih=722&dpr=1.25">
+                        WHO
+                    </a>
+                </div>
+                <div class="Y img">
+                    <a
+                        href="https://www.google.com/search?q=%E4%B8%AD%E5%9C%8B%E8%82%BA%E7%82%8E%E6%A2%97%E5%9C%96&tbm=isch&ved=2ahUKEwj9ia3ht-zvAhWMAKYKHXWeDOIQ2-cCegQIABAA&oq=%E4%B8%AD%E5%9C%8B%E8%82%BA%E7%82%8E%E6%A2%97%E5%9C%96&gs_lcp=CgNpbWcQARgAMgIIAFCvCFiKFWC9HWgAcAB4AIABSIgBuQKSAQE2mAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=-c1tYL2pGoyBmAX1vLKQDg&bih=722&biw=1536">支那
+                    </a>
+                </div>
+                <div class="Z img">
+                    <a
+                        href="https://www.google.com/search?q=%E7%B1%B3%E5%9C%8B&tbm=isch&ved=2ahUKEwiq2bD7t-zvAhVoGKYKHYjnBDEQ2-cCegQIABAA&oq=%E7%B1%B3%E5%9C%8B&gs_lcp=CgNpbWcQAzICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAMgIIADICCAA6BQgAELEDOgQIABAYUI8RWP4XYO0aaABwAHgAgAFBiAHGApIBATeYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&sclient=img&ei=MM5tYKqBAeiwmAWIz5OIAw&bih=722&biw=1536">
+                        米國
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #back{
+            padding: 10px;
+            width: 780px;
+            height: 780px;
+            background-color: black;
+        }
+        #A{
+            width: 100%;
+            height: calc(25% - 1.5px);
+            margin-bottom: 3px;
+            /* background-color: chartreuse; */
+        }
+        #A-box1{
+            width: 100%;
+            height: calc(33.3% - 2px);
+            background-color: blanchedalmond;
+        }
+        #A-box2{
+            width: 100%;
+            height: calc(33.3% - 2px);
+            background-color: blanchedalmond;
+            margin: 3px 0px;
+        }
+        #A-box3{
+            width: 100%;
+            height: calc(33.3% - 2px);
+            background-color: blanchedalmond;
+        }
+        #BC{
+            width: 100%;
+            height: calc(75% - 1.5px);
+            /* background-color: darkcyan; */
+        }
+        #B{
+            width: calc(75% - 1.5px);
+            height: 100%;
+            /* background-color: brown; */
+            float: left;
+        }
+        #B-1{
+            width: 100%;
+            height: calc(66.6% - 1.5px);
+            /* background-color: crimson; */
+            margin-bottom: 3px;
+        }
+        #B-1-1{
+            width: 33%;
+            height: 100%;
+            /* background-color: darkgrey; */
+            float: left;
+        }
+        #B-1-1-box1{
+            width: calc(33% - 2px);
+            height: 100%;
+            background-color: darkkhaki;
+            float: left;
+        }
+        #B-1-1-box2{
+            width: calc(33% - 2px);
+            height: 100%;
+            background-color: darkkhaki;
+            float: left;
+            margin: 0px 3px;
+        }
+        #B-1-1-box3{
+            width: calc(33% - 2px);
+            height: 100%;
+            background-color: darkkhaki;
+            float: left;
+        }
+        #B-1-2{
+            width: 66%;
+            height: 100%;
+            /* background-color: darkgrey; */
+            float: right;
+        }
+        #B-1-2-1{
+            width: 100%;
+            height: calc(50% - 1.5px);
+            margin-bottom: 3px;
+        }
+        #B-1-2-1-box1{
+            width: 100%;
+            height: calc(33.3% - 2px);
+            background-color: #fff;
+        }
+        #B-1-2-1-box2{
+            width: 100%;
+            height: calc(33.3% - 2px);
+            background-color: #fff;
+            margin: 3px 0px;
+        }
+        #B-1-2-1-box3{
+            width: 100%;
+            height: calc(33.3% - 2px);
+            background-color: #fff;
+        }
+        #B-1-2-2{
+            width: calc(50% - 1.5px);
+            height: 50%;
+            /* background-color: #fff; */
+            float: left;
+        }
+        #B-1-2-2-box1{
+            width: 100%;
+            height: calc(33% - 2px);
+            background: rgba(150, 126, 48, 0.911);
+        }
+        #B-1-2-2-box2{
+            width: 100%;
+            height: calc(33% - 2px);
+            background: rgba(150, 126, 48, 0.911);
+            margin: 3px 0px;
+        }
+        #B-1-2-2-box3{
+            width: 100%;
+            height: calc(33% - 2px);
+            background: rgba(150, 126, 48, 0.911);
+        }        
+        #B-1-2-3{
+            width: calc(50% - 1.5px);
+            height: 50%;
+            /* background-color: #fff; */
+            float: right;
+        }
+        #B-1-2-3-box1{
+            width: calc(33% - 2px);
+            height: 100%;
+            background: rgba(150, 126, 48, 0.911);
+            float: right;
+        }
+        #B-1-2-3-box2{
+            width: calc(33% - 2px);
+            height: 100%;
+            background: rgba(150, 126, 48, 0.911);
+            margin: 0px 3px;
+            float: right;
+        }
+        #B-1-2-3-box3{
+            width: calc(33% - 2px);
+            height: 100%;
+            background: rgba(150, 126, 48, 0.911);
+            float: right;
+        }
+        #B-2{
+            width: 100%;
+            height: calc(33.3% - 1.5px);
+            /* background-color: cyan; */
+        }
+        #B-2-box1{
+            width: 100%;
+            height: calc(33.3% - 2px);
+            background-color: darkblue;
+        }
+        #B-2-box2{
+            width: 100%;
+            height: calc(33.3% - 2px);
+            background-color: darkblue;
+            margin: 3px 0px;
+        }
+        #B-2-box3{
+            width: 100%;
+            height: calc(33.3% - 2px);
+            background-color: darkblue;
+        }
+        #C{
+            width: calc(25% - 1.5px);
+            height: 100%;
+            float: left;
+            margin-left: 3px;
+        }
+        #C-box1{
+            width: calc(33.3% - 2px);
+            height: 100%;
+            float: left;
+            background-color: blue;
+        }
+        #C-box2{
+            width: calc(33.3% - 2px);
+            height: 100%;
+            float: left;
+            background-color: blue;
+            margin: 0px 3px;
+        }
+        #C-box3{
+            width: calc(33.3% - 2px);
+            height: 100%;
+            float: left;
+            background-color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="back">
+        <div id="A">
+            <div id="A-box1"></div>
+            <div id="A-box2"></div>
+            <div id="A-box3"></div>
+        </div>
+        <div id="BC">
+            <div id="B">
+            <div id="B-1">
+                <div id="B-1-1">
+                    <div id="B-1-1-box1"></div>
+                    <div id="B-1-1-box2"></div>
+                    <div id="B-1-1-box3"></div>
+                </div>
+                <div id="B-1-2">
+                    <div id="B-1-2-1">
+                        <div id="B-1-2-1-box1"></div>
+                        <div id="B-1-2-1-box2"></div>
+                        <div id="B-1-2-1-box3"></div>
+                    </div>
+                    <div id="B-1-2-2">
+                        <div id="B-1-2-2-box1"></div>
+                        <div id="B-1-2-2-box2"></div>
+                        <div id="B-1-2-2-box3"></div>
+                    </div>
+                    <div id="B-1-2-3">
+                        <div id="B-1-2-3-box1"></div>
+                        <div id="B-1-2-3-box2"></div>
+                        <div id="B-1-2-3-box3"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="B-2">
+                <div id="B-2-box1"></div>
+                <div id="B-2-box2"></div>
+                <div id="B-2-box3"></div>
+            </div>
+        </div>
+        <div id="C">
+            <div id="C-box1"></div>
+            <div id="C-box2"></div>
+            <div id="C-box3"></div>
+        </div>
+        </div>
+        
+    </div>
+</body>
+</html>

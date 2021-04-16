@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        var score = -1
+
+        if (score < 60) {
+            console.log('您的分數是' + score + '分，等級為己');
+        } else {
+            if (score < 70) {
+                console.log('您的分數是' + score + '分，等級為戊');
+            } else {
+                if (score < 80) {
+                    console.log('您的分數是' + score + '分，等級為丁');
+                } else {
+                    if (score < 90) {
+                        console.log('您的分數是' + score + '分，等級為丙');
+                    } else {
+                        if (score < 100) {
+                            console.log('您的分數是' + score + '分，等級為乙');
+                        } else {
+                            console.log('您的分數是' + score + '分，等級為甲');
+                        }
+                    }
+                }
+            }
+        }
+        if (score < 0) {
+            console.log('404 not found，您是不是智商堪慮');
+        } else if (score < 60) {
+            console.log('您的分數是' + score + '分，等級為己');
+        } else if (score < 70) {
+            console.log('您的分數是' + score + '分，等級為戊');
+        } else if (score < 80) {
+            console.log('您的分數是' + score + '分，等級為丁');
+        } else if (score < 90) {
+            console.log('您的分數是' + score + '分，等級為丙');
+        } else if (score < 100) {
+            console.log('您的分數是' + score + '分，等級為乙');
+        } else if (score == 100) {
+            console.log('您的分數是' + score + '分，等級為甲上');
+        } else {
+            console.log('您的分數是' + score + '分，超過100分');
+        }
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

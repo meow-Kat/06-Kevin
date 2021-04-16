@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cute cat</title>
+    <style>
+        #A {
+            width: 580px;
+            height: 580px;
+            background-color: black;
+            padding: 10px;
+        }
+
+        #B {
+            width: auto;
+            height: calc(33.3% - 6.6px);
+            background-color: royalblue;
+            /* margin-bottom: 10px; */
+        }
+
+        #C {
+            width: auto;
+            height: calc(33.3% - 6.6px);
+            /* background-color: lightblue; */
+            margin: 10px 0px;
+
+        }
+
+        #C-1 {
+            width: 150px;
+            height: 100%;
+            background-color: sandybrown;
+            float: left;
+            
+        }
+
+        #C-2 {
+            width: calc(100% - 160px);
+            height: 200px;
+            /* background-color: seagreen; */
+            float: right;
+        }
+
+        #C-2-1 {
+            width: auto;
+            height: calc(33% - 10px);
+            background-color: rgb(243, 113, 20);
+            
+        }
+
+        #C-2-2 {
+            width: auto;
+            height: calc(33% - 10px);
+            background-color: rgb(62, 126, 10);
+            margin: 10px 0px;
+        }
+
+        #C-2-3 {
+            width: auto;
+            height: calc(33% - 10px);
+            background-color: rgb(10, 80, 126);
+        }
+
+        #D {
+            width: auto;
+            height: calc(33.3% - 6.6px);
+            background-color: salmon;
+        }
+
+        .clear{
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="A">
+        <div id="B"></div>
+        <div id="C">
+            <div id="C-1"></div>
+            <div id="C-2">
+                <div id="C-2-1"></div>
+                <div id="C-2-2"></div>
+                <div id="C-2-3"></div>
+            </div>
+        </div>
+        <div id="D"></div>
+    </div>
+    <div class="clear"></div>
+</body>
+
+</html>

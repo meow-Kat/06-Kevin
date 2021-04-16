@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- label 內要給ID與input id要一致 -->
+    <label for="score">輸入分數</label>
+    <!-- name是給後端看得，但是ID跟name名稱最好一致 -->
+    <input type="text" name="score" id="score">
+    <button id="submit">審查</button>
+    <span id="result"></span>
+
+
+    <script>
+        //抓取 資料 #ID  .class
+        var score = document.querySelector('#score')
+        var submit = document.querySelector('#submit')
+        var result = document.querySelector('#result')
+
+        // 取得元素屬性 用dom
+
+        // result.innerHTML 在result可以輸出文字
+
+        submit.onclick = function () {
+            if (score.value == '') {
+                result.innerHTML = '重新輸入'
+            } else {
+                if (score.value < 0) {
+                    result.innerHTML = '您的分數是' + score.value + '分，等級為甲賽'
+                } else if (score.value < 60) {
+                    result.innerHTML = '您的分數是' + score.value + '分，等級為己'
+                } else if (score.value < 70) {
+                    result.innerHTML = '您的分數是' + score.value + '分，等級為戊'
+                } else if (score.value < 80) {
+                    result.innerHTML = '您的分數是' + score.value + '分，等級為丁'
+                } else if (score.value < 90) {
+                    result.innerHTML = '您的分數是' + score.value + '分，等級為丙'
+                } else if (score.value < 100) {
+                    result.innerHTML = '您的分數是' + score.value + '分，等級為乙'
+                } else if (score.value == 100) {
+                    result.innerHTML = '您的分數是' + score.value + '分，等級為甲上'
+                } else {
+                    result.innerHTML = '您的分數是' + score.value + '分，超過100分'
+                }
+            }
+
+        }
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

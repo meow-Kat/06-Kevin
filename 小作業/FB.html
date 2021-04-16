@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        #navbar {
+            width: 100%;
+            height: 56px;
+            padding: 8px 16px;
+            /* position: fixed; */
+            background-color: dimgray;
+        }
+
+        #navbar-l {
+            width: 25%;
+            height: 100%;
+            position: relative;
+            float: left;
+        }
+
+        #logo {
+            width: 40px;
+            height: 100%;
+            background-color: blueviolet;
+            /* position: absolute; */
+            border-radius: 50%;
+        }
+
+        #serch {
+            width: calc(100% - 70px);
+            height: 100%;
+            background-color: burlywood;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            border-radius: 10px;
+        }
+
+        #navbar-m {
+            width: 50%;
+            height: 40px;
+            /* background-color: rgb(212, 21, 21); */
+            float: left;
+            position: absolute;
+            margin-left: calc(50% - 325px);
+        }
+
+        #home {
+            width: 130px;
+            height: 100%;
+            background-color: rgb(181, 223, 32);
+            float: left;
+        }
+
+        #watch {
+            width: 130px;
+            height: 100%;
+            background-color: rgb(32, 223, 41);
+            float: left;
+        }
+
+        #markplace {
+            width: 130px;
+            height: 100%;
+            background-color: rgb(20, 129, 84);
+            float: left;
+        }
+
+        #group {
+            width: 130px;
+            height: 100%;
+            background-color: rgb(32, 185, 223);
+            float: left;
+        }
+
+        #game {
+            width: 130px;
+            height: 100%;
+            background-color: rgb(32, 131, 223);
+            float: left;
+        }
+
+        #navbar-r {
+            width: 25%;
+            height: 100%;
+            position: relative;
+            float: right;
+            /* background-color: coral; */
+        }
+
+        #acount {
+            width: 125px;
+            height: 100%;
+            background-color: rgb(237, 100, 157);
+            float: right;
+            border-radius: 10px;
+        }
+
+        #note {
+            width: 40px;
+            height: 100%;
+            float: right;
+            background-color: crimson;
+
+        }
+
+        #meg {
+            width: 40px;
+            height: 100%;
+            float: right;
+            background-color: darkblue;
+        }
+
+        #creat {
+            width: 40px;
+            height: 100%;
+            float: right;
+            background-color: rgb(139, 0, 127);
+        }
+
+        #top {
+            width: 100%;
+            background: rgb(116, 109, 241);
+            background: linear-gradient(180deg, rgba(116, 109, 241, 1) 0%, rgba(172, 194, 246, 0) 50%, rgba(251, 251, 251, 1) 100%);
+            -webkit-box-shadow: 0px 6px 25px 5px rgba(0, 0, 0, 0.56);
+            box-shadow: 0px 6px 25px 5px rgba(0, 0, 0, 0.56);
+        }
+
+        #back2 {
+            width: 940px;
+            height: 360px;
+            background-color: dodgerblue;
+            margin: auto;
+            position: relative;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+
+        #changback {
+            width: 140px;
+            /* height: 40px; */
+            /* line-height: 40px; */
+            background-color: gold;
+            text-align: center;
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            border-radius: 10px;
+            padding: 10px 0px;
+        }
+
+        #pic {
+            width: 168px;
+            height: 168px;
+            background-color: firebrick;
+            /* margin: auto; */
+            top: 260px;
+            border-radius: 50%;
+            position: absolute;
+            left: calc(50% - 84px);
+        }
+
+        #box {
+            width: 890px;
+            /* height: 80px; */
+            padding: 10px;
+            background-color: fuchsia;
+            margin: auto;
+            padding: 30px 0px;
+            border-bottom: 2px solid black;
+            text-align: center;
+        }
+
+        #banner {
+            width: 910px;
+            height: 60px;
+            margin: auto;
+            background-color: brown;
+        }
+
+        hr {
+            size: 1px;
+            color: black;
+            width: 100%;
+            bottom: 0;
+        }
+
+        #nav-l {
+            width: 60%;
+            height: 100%;
+            background: rgb(5, 119, 62);
+            padding: 16px;
+            float: left;
+        }
+
+        #box1 {
+            width: 60px;
+            height: 100%;
+            background-color: blanchedalmond;
+            float: left;
+            margin: auto;
+        }
+
+        #box2 {
+            width: 60px;
+            height: 100%;
+            background-color: rgb(250, 161, 27);
+            float: left;
+        }
+
+        #box3 {
+            width: 60px;
+            height: 100%;
+            background-color: blanchedalmond;
+            float: left;
+        }
+
+        #box4 {
+            width: 60px;
+            height: 100%;
+            background-color: blanchedalmond;
+            float: left;
+        }
+
+        #box5 {
+            width: 60px;
+            height: 100%;
+            background-color: blanchedalmond;
+            float: left;
+        }
+
+        #box6 {
+            width: 60px;
+            height: 100%;
+            background-color: blanchedalmond;
+            float: left;
+        }
+
+        #box7 {
+            width: 60px;
+            height: 100%;
+            background-color: blanchedalmond;
+            float: left;
+        }
+
+        #nav-r {
+            width: 40%;
+            height: 100%;
+            background: rgb(77, 202, 139);
+            padding: 8px 16px;
+            float: right;
+        }
+
+        #box8 {
+            width: 60px;
+            height: 100%;
+            background-color: blanchedalmond;
+            float: right;
+            border-radius: 5px;
+        }
+
+        #box9 {
+            width: 60px;
+            height: 100%;
+            background-color: blanchedalmond;
+            float: right;
+            margin: 0 10px;
+            border-radius: 5px;
+        }
+
+        #box10 {
+            width: 60px;
+            height: 100%;
+            background-color: blanchedalmond;
+            float: right;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+
+        #box11 {
+            width: 120px;
+            height: 100%;
+            background-color: rgb(154, 182, 32);
+            float: right;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar">
+
+        <div id="navbar-l">
+            <div id="logo"></div>
+            <div id="serch"></div>
+        </div>
+        <div id="navbar-m">
+            <div id="home">
+            </div>
+            <div id="watch"></div>
+            <div id="markplace"></div>
+            <div id="group"></div>
+            <div id="game"></div>
+        </div>
+        <div id="navbar-r">
+            <div id="creat"></div>
+            <div id="meg"></div>
+            <div id="note"></div>
+            <div id="acount"></div>
+        </div>
+
+    </div>
+    <div id="top">
+        <div id="back2">
+            <div id="changback">
+                <div id="icon1"></div>
+                <span>編輯封面相片</span>
+            </div>
+        </div>
+        <div id="pic"></div>
+        <div id="box">
+            <div>Cute Cat</div>
+            <div>新增個人簡介</div>
+        </div>
+
+        <div id="banner">
+
+            <div id="nav-l">
+                <div id="box1">貼文</div>
+                <div id="box2">關於</div>
+                <div id="box3">評論</div>
+                <div id="box4">追蹤者</div>
+                <div id="box5">相片</div>
+                <div id="box6">影片</div>
+                <div id="box7">更多▼</div>
+            </div>
+            <div id="nav-r">
+                <div id="box8"></div>
+                <div id="box9"></div>
+                <div id="box10"></div>
+                <div id="box11">追蹤</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 50px 0 0 50px;
+        }
+
+
+        /* top區間 */
+        .top {
+            width: 100%;
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 2px solid darkgray;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: white;
+            z-index: 1;
+        }
+
+        /* top-left */
+        .top-left {
+            width: 165px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+        }
+
+        .logo {
+            width: 30px;
+            height: 30px;
+            background-image: url(https://s.yimg.com/os/creatr-uploaded-images/2020-12/53ca6ac0-49a8-11eb-9fff-5634fa713685);
+            background-position: center;
+            background-size: cover;
+        }
+
+        .browse {
+            padding: 13.5px 0;
+        }
+
+        .browse:hover {
+            color: slateblue;
+        }
+
+        .more {
+            width: 30px;
+            height: 30px;
+            font-size: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            /* background-color: darkgrey; */
+        }
+
+        .more:hover {
+            background-color: silver;
+        }
+
+        /* top-middle */
+        .top-search {
+            width: 390px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .input {
+            width: 355px;
+            height: 36px;
+            margin-right: 1px;
+            background-color: rgb(229, 229, 229);
+            border-radius: 5px 0 0 5px;
+            outline: 0px;
+            border: 0px;
+            padding-left: 15px;
+        }
+
+        .search-btn {
+            width: 35px;
+            height: 36px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 70%;
+            background-color: rgb(249, 249, 249);
+            border-radius: 0px 5px 5px 0px;
+            background-image: url(https://www.pngitem.com/pimgs/m/347-3472729_lupa-de-pesquisa-png-transparent-png.png);
+        }
+
+        /* top-right */
+        .top-right {
+            width: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .notification {
+            width: 20px;
+            height: 20px;
+            background-image: url(https://marketplace.canva.cn/MdSIc/MAB60ZMdSIc/2/tl/canva-MAB60ZMdSIc.png);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .login {
+            width: 46px;
+            height: 31px;
+            background-color: darkgrey;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .reg {
+            width: 46px;
+            height: 31px;
+            background-color: rgb(147, 33, 170);
+            border-radius: 5px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .personal {
+            width: 20px;
+            height: 20px;
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTceA_zY3NwZic1PpJYKeAdCE5GlWbnuKuK-Q&usqp=CAU);
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* 左邊的nav */
+
+        .channels {
+            width: 50px;
+            height: calc(100vh - 50px);
+            background-color: rgb(239, 239, 239);
+            padding-top: 10px;
+            position: fixed;
+            top: 50px;
+            left: 0;
+            /* display: flex; */
+            /* flex-direction: column; */
+            /* align-items: center; */
+        }
+
+        .channel {
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            background-color: rosybrown;
+            display: flex;
+            margin: 0 auto 10px;
+        }
+
+        /* main區域 */
+
+        main {
+            padding: 0 30px;
+        }
+
+        .container {
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 54px;
+            color: #0E0E10;
+            margin: 0;
+        }
+
+        h3 {
+            margin: 0;
+            color: #53535F;
+            font-size: 24px;
+        }
+
+        .theme {
+            padding: 30px 0;
+        }
+
+        h2 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        h4 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: normal;
+            margin-bottom: 20px;
+            color: #53535F;
+        }
+
+        /* game cards */
+        .gamecard-group {
+            height: auto;
+            margin: 20px 0;
+            /* background-color: slategray; */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-content: space-between;
+        }
+
+        .gamecard-group .head {
+            border: 2px solid black;
+        }
+
+        .gamecard {
+            width: 293px;
+            height: 70px;
+            border-radius: 5px;
+            background-color: rgb(234, 234, 234);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid transparent;
+            margin: 2px 0;
+        }
+
+        .gamecard-pic {
+            background-size: cover;
+            background-position: center;
+            width: 40px;
+            height: 50px;
+            background-color: tomato;
+            margin-right: 8px;
+        }
+
+        .photo1 {
+            background-image: url(https://upload.wikimedia.org/wikipedia/zh/8/86/Godzilla_King_of_the_Monsters_Poster.jpg);
+        }
+
+        .photo2 {
+            background-image: url(https://diz36nn4q02zr.cloudfront.net/webapi/images/r/SalePageDesc/6332743/0.jpg?ts=111719);
+        }
+
+        .photo3 {
+            background-image: url(https://live.staticflickr.com/65535/50876262853_f441082c9d_z.jpg);
+        }
+
+        .photo4 {
+            background-image: url(https://upload.wikimedia.org/wikipedia/zh/thumb/f/f3/King_Kong_movie.jpg/220px-King_Kong_movie.jpg);
+        }
+
+        .photo5 {
+            background-image: url(https://truth.bahamut.com.tw/s01/201702/defe3ba3325275b983a3f9420f1b3e91.JPG);
+        }
+
+        .photo6 {
+            background-image: url(https://www.mirrormedia.com.tw/assets/images/20170828150354-339ffa308b0bda1ac543277757855829-mobile.jpg);
+        }
+
+        .photo7 {}
+
+        .photo8 {}
+
+        .photo9 {}
+
+        .photo10 {}
+
+        .photo11 {}
+
+        .photo12 {}
+
+        .gamecard-textgroup {
+            width: 225px;
+            height: 50px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .live {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 20px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background-color: red;
+            color: white;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+
+        .livegame-group {
+            width: 100%;
+            height: 540px;
+            /* background-color: lawngreen; */
+            display: flex;
+
+        }
+
+        .livegame-head {
+            width: 600px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding-right: 10px;
+        }
+
+        .livegame-head-video {
+            height: 330px;
+            position: relative;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .pic1 {
+            background-image: url(https://www.mirrormedia.com.tw/assets/images/20200212174021-2a5fcaaacc03f096682bd7a901ddd15f-mobile.jpg);
+        }
+
+        .ivegame-videos-head {
+            height: 100%;
+            padding: 0 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .livegame-head-video .live {
+            top: 10px;
+            right: unset;
+            left: 10px;
+        }
+
+        .viewer{
+            position: absolute;
+            bottom: 10px;
+            left:10px;
+            font-size: 14px;
+            background-color: rgb(10, 10, 10, 0.5);
+            padding: 0 5px;
+            border-radius: 5px;
+            color: whitesmoke;
+        }
+
+        .livegame-chennel {
+            margin: 10px 0;
+            display: flex;
+            color: cornflowerblue;
+        }
+
+        .livegame-chennel-icon {
+            background-image: url(https://cdn.asiatatler.com/asiatatler/i/tw/2019/08/13174332-%E8%8D%89%E9%96%93%E5%BD%8C%E7%94%9F-%E5%8D%97%E7%93%9C-%E5%A3%93%E5%85%8B%E5%8A%9B%E9%A1%8F%E6%96%99%E7%95%AB%E5%B8%83-112x1455cm-2015_cover_2000x1539.jpg);
+            background-position: center;
+            background-size: cover;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+        .head-icon {
+            background-image: url(https://pht.qoo-static.com/EnPN-7nCJUpMsU99WzMLRk4b67cYwJ8kv2mJPvmtpUzHvAid3Z0U4BfmRQGPkDthCyE=w300);
+        }
+
+        h5 {
+            margin: 0;
+            font-size: 14px;
+            padding: 2px 0 0 5px;
+        }
+
+        .livegame-head h4 {
+            margin: 0;
+            padding: 0 0 10px 0;
+            font-weight: bold;
+        }
+
+        .livegame-head span {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .livegame-cards {
+            width: calc(100% - 600px);
+            height: 100%;
+            /* background-color: seagreen; */
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .livegame-card {
+            display: flex;
+            flex-direction: column;
+            width: 295px;
+            height: calc(540px / 2);
+            padding: 0 10px;
+        }
+
+        .livegame-card-video {
+            width: 100%;
+            height: 130px;
+            /* background-color: skyblue; */
+            position: relative;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .pic-card1 {
+            background-image: url(https://ichef.bbci.co.uk/news/640/cpsprodpb/4B4A/production/_103947291_1.jpg);
+        }
+
+        .pic-card2 {
+            background-image: url(https://im.marieclaire.com.tw/s1200c675h100b0/assets/mc/202003/5E6098A027A211583388832.jpeg);
+        }
+
+        .pic-card3 {
+            background-image: url(https://img.ltn.com.tw/Upload/ent/page/800/2015/09/12/php1bk5l2.jpg);
+        }
+
+        .pic-card4 {
+            background-image: url(https://p3.bdxiguaimg.com/img/tos-cn-i-0004/c12856ea75c44b0fb722447b23f92c43~tplv-xg-center-qs:422:236:q75.jpg);
+        }
+
+        .pic-card5 {
+            background-image: url(https://public.potaufeu.asahi.com/1efd-p/picture/11274168/9e529d0777c210e85bb121b3a6ba5e48_640px.jpg);
+        }
+
+        .pic-card6 {
+            background-image: url(https://images.truemii.com.tw/newsphoto/2020-10-20/1024/20201020401097.jpg);
+        }
+
+        .pic-card7 {
+            background-image: url(https://www.mirrormedia.com.tw/assets/images/20200325185754-53a9d0e18315f1ba7a3fb8f7d217def5-mobile.jpg);
+        }
+
+
+        .pic-card8 {
+            background-image: url(https://cdn2.ettoday.net/images/3315/3315168.jpg);
+        }
+
+        .livegame-card-video .live {
+            top: 10px;
+            right: unset;
+            left: 10px;
+        }
+
+        .livegame-card .livegame-chennel {
+            margin: 5px 0;
+            color: cornflowerblue;
+        }
+
+        .card-icon1 {}
+
+        .livegame-chennel .text {
+            padding: 1px 0 0 5px;
+        }
+
+        h6 {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .livegame-card span {
+            font-size: 14px;
+        }
+
+        @media(max-width:1330px){
+            .livegame-head {
+                width: 275px;
+            }
+
+            .livegame-head-video {
+                height: 130px;
+            }
+
+            .livegame-cards {
+                width: calc(100% - 275px);
+            }
+
+            .livegame-chennel {
+                margin: 5px 0;
+            }
+
+            .livegame-head h4 { 
+                padding: 0 0 5px;
+                font-size: 14px;
+                font-weight: bold;
+            }
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAV -->
+    <nav>
+        <div class="top">
+            <div class="top-left">
+                <div class="logo"></div>
+                <div class="browse"><span>瀏覽</span></div>
+                <div class="more">●●●</div>
+            </div>
+            <div class="top-search">
+                <input type="text" class="input" placeholder="搜尋">
+                <div class="search-btn"></div>
+            </div>
+            <div class="top-right">
+                <div class="notification"></div>
+                <div class="login">登入</div>
+                <div class="reg">註冊</div>
+                <div class="personal"></div>
+            </div>
+        </div>
+        <!-- 左邊的nav -->
+        <div class="channels">
+            <div class="channel"></div>
+            <div class="channel"></div>
+            <div class="channel"></div>
+            <div class="channel"></div>
+            <div class="channel"></div>
+            <div class="channel"></div>
+            <div class="channel"></div>
+            <div class="channel"></div>
+            <div class="channel"></div>
+            <div class="channel"></div>
+            <div class="channel"></div>
+            <div class="channel"></div>
+            <div class="channel"></div>
+            <div class="channel"></div>
+        </div>
+    </nav>
+    <main>
+        <div class="container">
+            <div class="theme">
+                <h1>電競</h1>
+                <h3>即時賽況、賽事精華和您最愛的職業玩家都在這裡</h3>
+            </div>
+            <div class="gamecard-group">
+                <div class="gamecard head">
+                    <div class="gamecard-pic photo1"></div>
+                    <div class="gamecard-textgroup">所有遊戲</div>
+                </div>
+                <div class="gamecard">
+                    <div class="gamecard-pic photo2"></div>
+                    <div class="gamecard-textgroup">
+                        <div class="gamecard-title">League of Legends</div>
+                        <div class="live gamecard-live">Live</div>
+                        <div class="gamecard-viewer">觀眾人數</div>
+                    </div>
+                </div>
+                <div class="gamecard">
+                    <div class="gamecard-pic photo3"></div>
+                    <div class="gamecard-textgroup">
+                        <div class="gamecard-title">League of Legends</div>
+                        <div class="live gamecard-live">Live</div>
+                        <div class="gamecard-viewer">觀眾人數</div>
+                    </div>
+                </div>
+                <div class="gamecard">
+                    <div class="gamecard-pic photo4"></div>
+                    <div class="gamecard-textgroup">
+                        <div class="gamecard-title">League of Legends</div>
+                        <div class="live gamecard-live">Live</div>
+                        <div class="gamecard-viewer">觀眾人數</div>
+                    </div>
+                </div>
+                <div class="gamecard">
+                    <div class="gamecard-pic photo5"></div>
+                    <div class="gamecard-textgroup">
+                        <div class="gamecard-title">League of Legends</div>
+                        <div class="live gamecard-live">Live</div>
+                        <div class="gamecard-viewer">觀眾人數</div>
+                    </div>
+                </div>
+                <div class="gamecard">
+                    <div class="gamecard-pic photo6"></div>
+                    <div class="gamecard-textgroup">
+                        <div class="gamecard-title">放錯惹</div>
+                        <div class="live gamecard-live">Live</div>
+                        <div class="gamecard-viewer">觀眾人數</div>
+                    </div>
+                </div>
+                <div class="gamecard">
+                    <div class="gamecard-pic photo7"></div>
+                    <div class="gamecard-textgroup">
+                        <div class="gamecard-title">League of Legends</div>
+                        <div class="live gamecard-live">Live</div>
+                        <div class="gamecard-viewer">觀眾人數</div>
+                    </div>
+                </div>
+                <div class="gamecard">
+                    <div class="gamecard-pic photo8"></div>
+                    <div class="gamecard-textgroup">
+                        <div class="gamecard-title">League of Legends</div>
+                        <div class="live live gamecard-live">Live</div>
+                        <div class="gamecard-viewer">觀眾人數</div>
+                    </div>
+                </div>
+                <div class="gamecard">
+                    <div class="gamecard-pic photo9"></div>
+                    <div class="gamecard-textgroup">
+                        <div class="gamecard-title">League of Legends</div>
+                        <div class="live gamecard-live">Live</div>
+                        <div class="gamecard-viewer">觀眾人數</div>
+                    </div>
+                </div>
+                <div class="gamecard">
+                    <div class="gamecard-pic photo10"></div>
+                    <div class="gamecard-textgroup">
+                        <div class="gamecard-title">League of Legends</div>
+                        <div class="live gamecard-live">Live</div>
+                        <div class="gamecard-viewer">觀眾人數</div>
+                    </div>
+                </div>
+                <div class="gamecard">
+                    <div class="gamecard-pic photo11"></div>
+                    <div class="gamecard-textgroup">
+                        <div class="gamecard-title">League of Legends</div>
+                        <div class="live gamecard-live">Live</div>
+                        <div class="gamecard-viewer">觀眾人數</div>
+                    </div>
+                </div>
+                <div class="gamecard">
+                    <div class="gamecard-pic photo12"></div>
+                    <div class="gamecard-textgroup">
+                        <div class="gamecard-title">League of Legends</div>
+                        <div class="live gamecard-live">Live</div>
+                        <div class="gamecard-viewer">觀眾人數</div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <div class="livegame">
+                <h2>實況中的對戰</h2>
+                <h4>我們認為您會喜歡的最精彩 Live 比賽和對戰</h4>
+                <div class="livegame-group">
+                    <div class="livegame-head">
+                        <div class="livegame-head-video pic1">
+                            <div class="live">Live</div>
+                            <div class="viewer">觀看人數:1324</div>
+                        </div>
+                        <div class="livegame-chennel">
+                            <div class="livegame-chennel-icon head-icon"></div>
+                            <h5>董志成</h5>
+                        </div>
+                        <h4>右側誰是董志成</h4>
+                        <span>範例僅供參考</span>
+
+                    </div>
+                    <div class="livegame-cards">
+                        <div class="livegame-card">
+                            <div class="livegame-card-video pic-card1">
+                                <div class="live">Live</div>
+                                <div class="viewer">觀看人數:1324</div>
+                            </div>
+                            <div class="livegame-chennel card-icon1">
+                                <div class="livegame-chennel-icon"></div>
+                                <h5 class="text">我是誰?</h5>
+                            </div>
+                            <div class="livegame-card-title"></div>
+                            <h6>猜看看</h6>
+                            <span>恩...?黑?...怎?</span>
+                        </div>
+
+                        <div class="livegame-card">
+                            <div class="livegame-card-video pic-card2">
+                                <div class="live">Live</div>
+                                <div class="viewer">觀看人數:1324</div>
+                            </div>
+                            <div class="livegame-chennel card-icon1">
+                                <div class="livegame-chennel-icon"></div>
+                                <h5 class="text">我是誰?</h5>
+                            </div>
+                            <div class="livegame-card-title"></div>
+                            <h6>猜看看</h6>
+                            <span>為了後事先拍個照</span>
+                        </div>
+
+                        <div class="livegame-card">
+                            <div class="livegame-card-video pic-card3">
+                                <div class="live">Live</div>
+                                <div class="viewer">觀看人數:1324</div>
+                            </div>
+                            <div class="livegame-chennel card-icon1">
+                                <div class="livegame-chennel-icon"></div>
+                                <h5 class="text">我是誰?</h5>
+                            </div>
+                            <div class="livegame-card-title"></div>
+                            <h6>猜看看</h6>
+                            <span>沒有特別想要說什麼</span>
+                        </div>
+
+                        <div class="livegame-card">
+                            <div class="livegame-card-video pic-card4">
+                                <div class="live">Live</div>
+                                <div class="viewer">觀看人數:1324</div>
+                            </div>
+                            <div class="livegame-chennel card-icon1">
+                                <div class="livegame-chennel-icon"></div>
+                                <h5 class="text">我是誰?</h5>
+                            </div>
+                            <div class="livegame-card-title"></div>
+                            <h6>猜看看</h6>
+                            <span>.............</span>
+                        </div>
+
+                        <div class="livegame-card">
+                            <div class="livegame-card-video pic-card5">
+                                <div class="live">Live</div>
+                                <div class="viewer">觀看人數:1324</div>
+                            </div>
+                            <div class="livegame-chennel card-icon1">
+                                <div class="livegame-chennel-icon"></div>
+                                <h5 class="text">我是誰?</h5>
+                            </div>
+                            <div class="livegame-card-title"></div>
+                            <h6>猜看看</h6>
+                            <span>節目開始了還忘記要講話的我</span>
+                        </div>
+
+                        <div class="livegame-card">
+                            <div class="livegame-card-video pic-card6">
+                                <div class="live">Live</div>
+                                <div class="viewer">觀看人數:1324</div>
+                            </div>
+                            <div class="livegame-chennel card-icon1">
+                                <div class="livegame-chennel-icon"></div>
+                                <h5 class="text">我是誰?</h5>
+                            </div>
+                            <div class="livegame-card-title"></div>
+                            <h6>猜看看</h6>
+                            <span>本來想說點什麼的...</span>
+                        </div>
+
+                        <div class="livegame-card">
+                            <div class="livegame-card-video pic-card7">
+                                <div class="live">Live</div>
+                                <div class="viewer">觀看人數:1324</div>
+                            </div>
+                            <div class="livegame-chennel card-icon1">
+                                <div class="livegame-chennel-icon"></div>
+                                <h5 class="text">我是誰?</h5>
+                            </div>
+                            <div class="livegame-card-title"></div>
+                            <h6>猜看看</h6>
+                            <span>恩........?</span>
+                        </div>
+
+                        <div class="livegame-card">
+                            <div class="livegame-card-video pic-card8">
+                                <div class="live">Live</div>
+                                <div class="viewer">觀看人數:1324</div>
+                            </div>
+                            <div class="livegame-chennel card-icon1">
+                                <div class="livegame-chennel-icon"></div>
+                                <h5 class="text">我是誰?</h5>
+                            </div>
+                            <div class="livegame-card-title"></div>
+                            <h6>猜看看</h6>
+                            <span>蛤?</span>
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .top {
+            width: 100%;
+        }
+
+        .photo {
+            position: relative;
+            background-size: cover;
+            background-repeat: no-repeat;
+            opacity: 0.7;
+            width: 100%;
+            height: 100vh;
+            background-image: url("https://www.w3schools.com/howto/img_parallax.jpg");
+        }
+
+        .text {
+            width: max-content;
+            font-size: 25px;
+            background-color: darkgray;
+            position: absolute;
+            padding: 18px;
+            left: calc(50% - 108px);
+            top: calc(50% - 32px);
+            top: 50%;
+        }
+
+        .intro_box {
+            margin: 50px;
+        }
+
+        .intro {
+            padding: 20px 0;
+            /* background-color: darkgreen; */
+            font-size: 20px;
+            text-align: center;
+            letter-spacing: 5px;
+        }
+
+        .intro_text {
+            width: 90%;
+            padding: 0 15px 0;
+            background-color: white;
+            margin: auto;
+            font: 400 15px/1.8 "lato";
+            color: darkgrey;
+        }
+
+        .contain_img-1 {
+            position: relative;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.7;
+            width: 100%;
+            height: 400px;
+            background-image: url("https://www.w3schools.com/howto/img_parallax2.jpg");
+        }
+
+        .contain_img-2 {
+            position: relative;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.7;
+            width: 100%;
+            height: 400px;
+            background-image: url("https://www.w3schools.com/howto/img_parallax3.jpg");
+        }
+
+        .con_text {
+            width: max-content;
+            font-size: 25px;
+            /* background-color: darkgray; */
+            position: absolute;
+            padding: 18px;
+            left: calc(50% - 108px);
+            top: calc(50% - 32px);
+            top: 50%;
+            color: whitesmoke;
+        }
+
+        .con_dir{
+            background-color: #282E34;
+            padding: 50px 80px;
+        }
+
+        .direct {
+            padding: 15px;
+            color: whitesmoke;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <div class="photo">
+            <div class="text">
+                <span>SCROLL DOWN</span>
+            </div>
+        </div>
+    </div>
+    <div class="min">
+        <div class="intro_box">
+            <div class="intro">
+                <span>PARALLAX DEMO</span>
+            </div>
+            <div class="intro_text">
+                <span>
+                    Parallax scrolling is a web site trend where the background content is moved at a different speed
+                    than the foreground content while scrolling. Nascetur per nec posuere turpis, lectus nec libero
+                    turpis nunc at, sed posuere mollis ullamcorper libero ante lectus, blandit pellentesque a, magna
+                    turpis est sapien duis blandit dignissim. Viverra interdum mi magna mi, morbi sociis. Condimentum
+                    dui ipsum consequat morbi, curabitur aliquam pede, nullam vitae eu placerat eget et vehicula. Varius
+                    quisque non molestie dolor, nunc nisl dapibus vestibulum at, sodales tincidunt mauris ullamcorper,
+                    dapibus pulvinar, in neque risus odio. Accumsan fringilla vulputate at quibusdam sociis eleifend,
+                    aenean maecenas vulputate, non id vehicula lorem mattis, ratione interdum sociis ornare. Suscipit
+                    proin magna cras vel, non sit platea sit, maecenas ante augue etiam maecenas, porta porttitor
+                    placerat leo.
+                </span>
+            </div>
+        </div>
+        <div class="contain">
+            <div class="contain_img-1">
+                <div class="con_text">
+                    <span>LESS HEIGHT</span>
+                </div>
+            </div>
+            <div class="con_dir">
+                <div class="direct">
+                    <span>Scroll up and down to really get the feeling of how Parallax Scrolling works.</span>
+                </div>
+            </div>
+            <div class="contain_img-2">
+                <div class="con_text">
+                    <span>SCROLL UP</span>
+                </div>
+            </div>
+            <div class="con_dir">
+                <div class="direct">
+                    <span>Scroll up and down to really get the feeling of how Parallax Scrolling works.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="foot">
+        <div class="photo">
+            <div class="text">
+                <span>COOL!</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
