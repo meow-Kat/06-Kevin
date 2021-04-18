@@ -123,14 +123,28 @@
     <script>
         var btns = document.querySelectorAll('.tab-btn')
         var contents = document.querySelectorAll('.tab-content')
-        
+
+        function clearAllActive() {
+            btn_1.classList.remove('active')
+            content_1.classList.remove('active')
+            btn_2.classList.remove('active')
+            content_2.classList.remove('active')
+            btn_3.classList.remove('active')
+            content_3.classList.remove('active')
+        }
 
         for (let index = 0; index < btns.length; index++) {
-            btns[index].onclick = function(){
+
+            btns[index].onclick = function () {
+                for (let index = 0; index < btns.length; index++) {
+                    btns[index].classList.remove('active')
+                    contents[index].classList.remove('active')
+                }
                 btns[index].classList.add('active')
+                contents[index].classList.add('active')
             }
         }
-        
+
     </script>
 </body>
 
