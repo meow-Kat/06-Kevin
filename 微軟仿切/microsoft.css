@@ -55,20 +55,45 @@
             align-items: center;
         }
 
-        nav .container .btns{
-            width: 47px;
+        
+
+        nav .container .btnh{
+            width: 55px;
             height: 100%;
             display: none;
             justify-content: center;
             align-items: center;
             font-size: 32px;
-            border: 1px solid black;
+            /* border: 1px solid black; */
+            z-index: 1;
         }
 
-        #btns:checked + #btn-list{
+        nav .container .btnh-h{
+            color: transparent;
+        }
+
+        nav .container .btn-X{
+            width: 45px;
+            height: 68px;
+            background-color: white;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            font-size: 54px;
+            position: absolute;
+            top: -13px;
+            left: 7px;
+        }
+
+        #btns:checked + .btn-list {
             display: flex;
         }
 
+        nav .container .btn-q{
+            display: block;
+        }
+
+        
         .btn-list{
             width: 100%;
             position: absolute;
@@ -80,19 +105,14 @@
             display: none;
         }
 
-        
-
-       
-
-        #btn-list a{
+        .btn-list a{
             padding: 16px;
             border: 1px double #ECECEC;
             font-size: 15px;
         }
 
-        #btn-list .bottom{
+        .btn-list .bottom{
             border-bottom: 1px solid black;
-            
         }
 
         nav .links {
@@ -103,6 +123,11 @@
 
         nav .links .link {
             margin: 0 15px;
+            border-bottom: 2px solid transparent;
+        }
+
+        nav .links .link:hover{
+            border-bottom: 2px solid black;
         }
 
         nav .nav-left .logo {
@@ -120,12 +145,31 @@
             align-items: center;
         }
 
+        nav .options label{
+            border-bottom: 2px solid transparent;
+        }
+
+        nav .options label:hover{
+            border-bottom: 2px solid black;
+        }
+
         nav .options .option {
             margin: 0 20px;
             height: 100%;
             display: flex;
             align-items: center;
         }
+
+        .option span{
+            border-bottom: 2px solid transparent ;
+
+        }
+
+        .option span:hover{
+            border-bottom: 2px solid black;
+        }
+
+        .option
 
         nav .options .option:last-child {
             margin-right: 8px;
@@ -198,7 +242,7 @@
             right: 50%;
             transform: translateX(50%);
             background-color: #F2F2F2;
-            
+            z-index: 3;
         }
 
         .option-list{
@@ -273,22 +317,42 @@
         }
 
         .picture-textbox .buy-box {
-            width: max-content;
-            padding: 8px 20px;
+            width: 125px;
+            padding: 10px 0;
+            
             background-color: black;
             color: white;
+        }
+
+        .picture-textbox .buy-box .buy{
+            margin-left: 20px;
+            border-bottom: 3px solid transparent;
+        }
+
+        .picture-textbox .buy-box:hover .buy{
+            margin-left: 17px;
+            border-bottom: 3px solid white;
+            transition: 0.5s;
+        }
+
+        .picture-textbox .buy-box:hover .buy-icon{
+            transition: 0.5s;
+            margin-left: 8px;
         }
 
         picture {
             position: relative;
         }
 
-        .banner .btn {
+        .banner .btns {
+            display: none;
+        }
+
+        .btn{
             width: 42px;
             height: 42px;
             border-radius: 50%;
             background-color: #f5f3f3;
-            display: flex;
             justify-content: center;
             align-items: center;
             font-size: 24px;
@@ -297,21 +361,33 @@
             top: 50%;
             transform: translateY(-50%);
             margin: 0 2px;
-            display: none;
+            right: 0;
+            display: flex;
         }
 
-        .banner .btn-right {
-            left: unset;
+        .banner .btn-right{
             right: 0;
         }
 
-        picture:hover + .btn{
-            box-shadow: 0px 0px 6px 0px black;
-            display: flex;
-            /* align-items: center; */
+        .banner .btn-left {
+            left: 0px;
         }
 
-        
+        picture:hover + .btns{
+            display: flex;
+        }
+
+        .banner .btns:hover {
+            display: flex;
+        }
+
+        .banner .btn-left:hover {
+            box-shadow: 0px 0px 6px 0px black;
+        }
+
+        .banner .btn-right:hover {
+            box-shadow: 0px 0px 6px 0px black;
+        }
 
         /* icon */
         .icons {
@@ -356,6 +432,10 @@
             display: flex;
             justify-content: center;
             text-align: center;
+        }
+
+        .icons .icon span:hover{
+            text-decoration:underline;
         }
 
         .product {
@@ -418,9 +498,27 @@
 
         .product-card .buy-box {
             width: max-content;
-            padding: 10px 16px 7px 0;
+            padding: 10px 0px 7px ;
             border: 2px solid transparent;
             color: #0067b8;
+        }
+
+        .product-card .buy-box-365{
+            width: 150px;
+        }
+
+        .buy{
+            border-bottom: 2px solid transparent;
+        }
+
+        .product-card .buy-box:hover .buy{
+            border-bottom: 2px solid #0067b8;
+            transition: 0.5s;
+        }
+
+        .product-card .buy-box:hover .buy-icon{
+            padding-left: 8px;
+            transition: 0.5s;
         }
 
         .banner {
@@ -668,7 +766,7 @@
                 margin-left: 0;
             }
 
-            nav .container .btns{
+            nav .container .btnh{
                 display: flex;
                 margin-left: 1px;
             }

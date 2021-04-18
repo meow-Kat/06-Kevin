@@ -13,9 +13,10 @@
 <body>
     <nav>
         <div class="container">
-            <label for="btns" class="btns">☰</label>
-            <input type="checkbox" name="" id="btns" >
-            <div id="btn-list" class="btn-list">
+            <div class="btn-X">×</div>
+            <label for="btns" class="btnh">☰</label>
+            <input type="checkbox" id="btns">
+            <div class="btn-list">
                 <a href="">Microsoft 365</a>
                 <a href="">Office</a>
                 <a href="">windows</a>
@@ -150,8 +151,11 @@
                         src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE3NYMo?ver=d72d&amp;q=0&amp;m=8&amp;h=600&amp;w=1600&amp;b=%23FFFFFFFF&amp;l=f&amp;x=0&amp;y=176&amp;s=2120&amp;d=795&amp;aim=true"
                         data-src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE3NYMo?ver=d72d&amp;q=0&amp;m=8&amp;h=600&amp;w=1600&amp;b=%23FFFFFFFF&amp;l=f&amp;x=0&amp;y=176&amp;s=2120&amp;d=795&amp;aim=true">
                 </picture>
-                <div class="btn btn-left">＞</div>
-                <div class="btn btn-right">＜</div>
+                <div class="btns">
+                    <div class="btn btn-left">＜</div>
+                    <div class="btn btn-right">＞</div>
+                </div>
+
                 <div class="picture-textbox">
                     <div class="picture-title">Surface Laptop 3</div>
                     <div class="picture-text">每天使用完美筆記型電腦，速度比以往更快</div>
@@ -212,11 +216,11 @@
                             <span>進階版 Office 應用程式、額外的雲端儲存空間、進階安全性等功能，全都在一個方便的訂閱中。</span>
                         </div>
                         <div class="buy-box-group">
-                            <div class="buy-box">
+                            <div class="buy-box buy-box-365">
                                 <span class="buy">最多可供6人使用</span>
                                 <span class="buy-icon">＞</span>
                             </div>
-                            <div class="buy-box">
+                            <div class="buy-box buy-box-365">
                                 <span class="buy">適合1人使用</span>
                                 <span class="buy-icon">＞</span>
                             </div>
@@ -312,7 +316,7 @@
             </div>
 
         </div>
-        <!-- 產品和關注-->
+        <!-- 產品-->
         <div class="container">
             <div class="product">
                 <!-- 第5個產品 -->
@@ -359,19 +363,19 @@
                 <!-- 第7個產品 -->
 
                 <div class="product-card product-card_no-pa">
-                    <a href=""></a>
-                    <h1></h1>
-                    <div class="product-pic pic7"></div>
-                    <div class="product-text">
-                        <h2>Microsoft 365 商務版</h2>
-                        <span>透過功能強大的應用程式提高生產力、聯繫和安全，始終領先一步。</span>
-                    </div>
-                    <div class="buy-box-group">
-                        <div class="buy-box">
-                            <span class="buy">立即選購</span>
-                            <span class="buy-icon">＞</span>
+                    <a href="">
+                        <h1></h1>
+                        <div class="product-pic pic7"></div>
+                        <div class="product-text">
+                            <h2>Microsoft 365 商務版</h2>
+                            <span>透過功能強大的應用程式提高生產力、聯繫和安全，始終領先一步。</span>
                         </div>
-                    </div>
+                        <div class="buy-box-group">
+                            <div class="buy-box">
+                                <span class="buy">立即選購</span>
+                                <span class="buy-icon">＞</span>
+                            </div>
+                        </div>
                     </a>
                 </div>
 
@@ -393,9 +397,11 @@
                         </div>
                     </a>
                 </div>
-
             </div>
         </div>
+
+
+        <!-- 關注 -->
         <div class="container container-focous">
             <div class="focous">
                 <span>關注 Microsoft</span>
@@ -418,135 +424,135 @@
     <footer>
         <div class="container">
             <div class="information">
-                
-                    <!-- 最新動向 -->
 
-                    <div class="information-box">
-                        <div class="information-title">最新動向</div>
-                        <a href="https://www.microsoft.com/zh-tw/microsoft-365?rtc=1">
-                            <div class="infor">Microsoft 365</div>
-                        </a>
-                        <a href="https://www.microsoft.com/zh-tw/surface/devices/surface-go">
-                            <div class="infor">Surface Go</div>
-                        </a>
-                        <a href="https://www.microsoft.com/zh-tw/surface/devices/surface-book-2/overview">
-                            <div class="infor">Surface Book 2</div>
-                        </a>
-                        <a href="https://www.microsoft.com/zh-tw/surface/devices/surface-pro/overview">
-                            <div class="infor">Surface Pro</div>
-                        </a>
-                        <a href="https://www.microsoft.com/zh-tw/windows/windows-10-apps">
-                            <div class="infor">Windows 10 應用程式</div>
-                        </a>
-                    </div>
+                <!-- 最新動向 -->
 
-                    <!-- Microsoft Store -->
-                    <div class="information-box">
-                        <div class="information-title">Microsoft Store</div>
-                        <a href="https://account.microsoft.com/">
-                            <div class="infor">帳戶設定檔</div>
-                        </a>
-                        <a href="https://www.microsoft.com/zh-tw/download">
-                            <div class="infor">下載中心</div>
-                        </a>
-                        <a href="https://go.microsoft.com/fwlink/?linkid=2139749">
-                            <div class="infor">Microsoft Store 支援</div>
-                        </a>
-                        <a href="https://go.microsoft.com/fwlink/p/?LinkID=824764&clcid=0x404">
-                            <div class="infor">退貨/退款</div>
-                        </a>
-                        <a href="https://account.microsoft.com/orders">
-                            <div class="infor">訂單追蹤</div>
-                        </a>
-                    </div>
+                <div class="information-box">
+                    <div class="information-title">最新動向</div>
+                    <a href="https://www.microsoft.com/zh-tw/microsoft-365?rtc=1">
+                        <div class="infor">Microsoft 365</div>
+                    </a>
+                    <a href="https://www.microsoft.com/zh-tw/surface/devices/surface-go">
+                        <div class="infor">Surface Go</div>
+                    </a>
+                    <a href="https://www.microsoft.com/zh-tw/surface/devices/surface-book-2/overview">
+                        <div class="infor">Surface Book 2</div>
+                    </a>
+                    <a href="https://www.microsoft.com/zh-tw/surface/devices/surface-pro/overview">
+                        <div class="infor">Surface Pro</div>
+                    </a>
+                    <a href="https://www.microsoft.com/zh-tw/windows/windows-10-apps">
+                        <div class="infor">Windows 10 應用程式</div>
+                    </a>
+                </div>
 
-                    <!-- 教育 -->
-                    <div class="information-box">
-                        <div class="information-title">教育</div>
-                        <a href="https://www.microsoft.com/zh-tw/education">
-                            <div class="infor">Microsoft 在教育領域的應用</div>
-                        </a>
-                        <a href="https://www.microsoft.com/zh-tw/education/products/office/default.aspx">
-                            <div class="infor">學生適用的 Office</div>
-                        </a>
-                        <a href="https://products.office.com/zh-tw/academic/compare-office-365-education-plans">
-                            <div class="infor">學校適用的 Office 365</div>
-                        </a>
-                        <a href="https://azure.microsoft.com/zh-tw/community/education/">
-                            <div class="infor">Microsoft Azure 在教育領域的應用</div>
-                        </a>
-                    </div>
-                
+                <!-- Microsoft Store -->
+                <div class="information-box">
+                    <div class="information-title">Microsoft Store</div>
+                    <a href="https://account.microsoft.com/">
+                        <div class="infor">帳戶設定檔</div>
+                    </a>
+                    <a href="https://www.microsoft.com/zh-tw/download">
+                        <div class="infor">下載中心</div>
+                    </a>
+                    <a href="https://go.microsoft.com/fwlink/?linkid=2139749">
+                        <div class="infor">Microsoft Store 支援</div>
+                    </a>
+                    <a href="https://go.microsoft.com/fwlink/p/?LinkID=824764&clcid=0x404">
+                        <div class="infor">退貨/退款</div>
+                    </a>
+                    <a href="https://account.microsoft.com/orders">
+                        <div class="infor">訂單追蹤</div>
+                    </a>
+                </div>
+
+                <!-- 教育 -->
+                <div class="information-box">
+                    <div class="information-title">教育</div>
+                    <a href="https://www.microsoft.com/zh-tw/education">
+                        <div class="infor">Microsoft 在教育領域的應用</div>
+                    </a>
+                    <a href="https://www.microsoft.com/zh-tw/education/products/office/default.aspx">
+                        <div class="infor">學生適用的 Office</div>
+                    </a>
+                    <a href="https://products.office.com/zh-tw/academic/compare-office-365-education-plans">
+                        <div class="infor">學校適用的 Office 365</div>
+                    </a>
+                    <a href="https://azure.microsoft.com/zh-tw/community/education/">
+                        <div class="infor">Microsoft Azure 在教育領域的應用</div>
+                    </a>
+                </div>
+
                 <!-- 企業 -->
-                
-                    <div class="information-box">
-                        <div class="information-title">企業</div>
-                        <a href="https://azure.microsoft.com/">
-                            <div class="infor">Azure</div>
-                        </a>
-                        <a href="https://go.microsoft.com/fwlink/?LinkID=808093">
-                            <div class="infor">AppSource</div>
-                        </a>
-                        <a href="https://www.microsoft.com/enterprise/automotive">
-                            <div class="infor">汽車</div>
-                        </a>
-                        <a href="https://www.microsoft.com/enterprise/government">
-                            <div class="infor">政府機構</div>
-                        </a>
-                        <a href="https://www.microsoft.com/enterprise/health">
-                            <div class="infor">醫療保健</div>
-                        </a>
-                        <a href="https://www.microsoft.com/enterprise/manufacturing">
-                            <div class="infor">製造</div>
-                        </a>
-                        <a href="https://www.microsoft.com/enterprise/financial-services/banking-and-capital-markets">
-                            <div class="infor">金融服務</div>
-                        </a>
-                        <a href="https://www.microsoft.com/enterprise/retail-consumer-goods">
-                            <div class="infor">零售</div>
-                        </a>
-                    </div>
 
-                    <!-- 開發人員 -->
-                    <div class="information-box">
-                        <div class="information-title">開發人員</div>
-                        <a href="https://visualstudio.microsoft.com/">
-                            <div class="infor">Microsoft Visual Studio</div>
-                        </a>
-                        <a href="https://developer.microsoft.com/zh-tw/windows">
-                            <div class="infor">Windows 開發人員中心</div>
-                        </a>
-                        <a href="https://developer.microsoft.com/">
-                            <div class="infor">開發人員中心</div>
-                        </a>
-                        <a href="https://developer.microsoft.com/zh-tw/store/register">
-                            <div class="infor">Microsoft 開發人員計畫</div>
-                        </a>
-                        <a href="https://channel9.msdn.com/">
-                            <div class="infor">Channel 9</div>
-                        </a>
-                    </div>
+                <div class="information-box">
+                    <div class="information-title">企業</div>
+                    <a href="https://azure.microsoft.com/">
+                        <div class="infor">Azure</div>
+                    </a>
+                    <a href="https://go.microsoft.com/fwlink/?LinkID=808093">
+                        <div class="infor">AppSource</div>
+                    </a>
+                    <a href="https://www.microsoft.com/enterprise/automotive">
+                        <div class="infor">汽車</div>
+                    </a>
+                    <a href="https://www.microsoft.com/enterprise/government">
+                        <div class="infor">政府機構</div>
+                    </a>
+                    <a href="https://www.microsoft.com/enterprise/health">
+                        <div class="infor">醫療保健</div>
+                    </a>
+                    <a href="https://www.microsoft.com/enterprise/manufacturing">
+                        <div class="infor">製造</div>
+                    </a>
+                    <a href="https://www.microsoft.com/enterprise/financial-services/banking-and-capital-markets">
+                        <div class="infor">金融服務</div>
+                    </a>
+                    <a href="https://www.microsoft.com/enterprise/retail-consumer-goods">
+                        <div class="infor">零售</div>
+                    </a>
+                </div>
 
-                    <!-- 公司 -->
-                    <div class="information-box">
-                        <div class="information-title">公司</div>
-                        <a href="https://careers.microsoft.com/">
-                            <div class="infor">人才招募</div>
-                        </a>
-                        <a href="https://news.microsoft.com/zh-tw">
-                            <div class="infor">公司新聞</div>
-                        </a>
-                        <a href="https://privacy.microsoft.com/zh-tw">
-                            <div class="infor">Microsoft 隱私權</div>
-                        </a>
-                        <a href="https://www.microsoft.com/investor/default.aspx">
-                            <div class="infor">投資者</div>
-                        </a>
-                        <a href="https://www.microsoft.com/zh-tw/security/default.aspx">
-                            <div class="infor">安全性</div>
-                        </a>
-                    </div>
-                
+                <!-- 開發人員 -->
+                <div class="information-box">
+                    <div class="information-title">開發人員</div>
+                    <a href="https://visualstudio.microsoft.com/">
+                        <div class="infor">Microsoft Visual Studio</div>
+                    </a>
+                    <a href="https://developer.microsoft.com/zh-tw/windows">
+                        <div class="infor">Windows 開發人員中心</div>
+                    </a>
+                    <a href="https://developer.microsoft.com/">
+                        <div class="infor">開發人員中心</div>
+                    </a>
+                    <a href="https://developer.microsoft.com/zh-tw/store/register">
+                        <div class="infor">Microsoft 開發人員計畫</div>
+                    </a>
+                    <a href="https://channel9.msdn.com/">
+                        <div class="infor">Channel 9</div>
+                    </a>
+                </div>
+
+                <!-- 公司 -->
+                <div class="information-box">
+                    <div class="information-title">公司</div>
+                    <a href="https://careers.microsoft.com/">
+                        <div class="infor">人才招募</div>
+                    </a>
+                    <a href="https://news.microsoft.com/zh-tw">
+                        <div class="infor">公司新聞</div>
+                    </a>
+                    <a href="https://privacy.microsoft.com/zh-tw">
+                        <div class="infor">Microsoft 隱私權</div>
+                    </a>
+                    <a href="https://www.microsoft.com/investor/default.aspx">
+                        <div class="infor">投資者</div>
+                    </a>
+                    <a href="https://www.microsoft.com/zh-tw/security/default.aspx">
+                        <div class="infor">安全性</div>
+                    </a>
+                </div>
+
             </div>
             <div class="footer-nav">
                 <div class="footer-nav-left">
@@ -579,6 +585,26 @@
                 </ul>
             </div>
     </footer>
+
+    <script>
+        var btn = document.querySelector('.btnh')
+        var btnx = document.querySelector('.btn-X')
+
+        btn.onclick = function () {
+            if ( btn.classList.contains('btnh-h')) {
+                btn.classList.remove('btnh-h')
+                btnx.classList.remove('btn-q')
+            }else{
+                btn.classList.add('btnh-h')
+                btnx.classList.add('btn-q')
+
+            }
+            
+        }
+
+    </script>
+
+
 </body>
 
 </html>
