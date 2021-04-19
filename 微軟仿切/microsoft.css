@@ -536,6 +536,11 @@
             width: 28px;
             height: 28px;
             margin-right: 18px;
+            background-color: rgba(0, 0, 0, 0.479);
+        }
+
+        .focous picture:hover{
+            opacity: 0.6;
         }
 
         .pic5 {
@@ -550,7 +555,7 @@
             background-image: url(https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4CFyx?ver=25c5&q=90&m=6&h=201&w=358&b=%23FFFFFFFF&l=f&o=t&x=839&y=615&aim=true);
         }
 
-        .pci8 {
+        .pic8 {
             background-image: url(https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RWyG26?ver=8f21&q=90&m=6&h=201&w=358&b=%23FFFFFFFF&l=f&o=t&aim=true);
         }
 
