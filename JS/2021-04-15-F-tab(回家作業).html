@@ -124,22 +124,25 @@
         var btns = document.querySelectorAll('.tab-btn')
         var contents = document.querySelectorAll('.tab-content')
 
-        function clearAllActive() {
-            btn_1.classList.remove('active')
-            content_1.classList.remove('active')
-            btn_2.classList.remove('active')
-            content_2.classList.remove('active')
-            btn_3.classList.remove('active')
-            content_3.classList.remove('active')
+        // 老師的方法先把funtion寫出來
+        function clearAllActive () {
+            for (let index = 0; index < btns.length; index++) {
+                btns[index].classList.remove('active')
+                    contents[index].classList.remove('active')
+            }
         }
 
         for (let index = 0; index < btns.length; index++) {
-
             btns[index].onclick = function () {
-                for (let index = 0; index < btns.length; index++) {
-                    btns[index].classList.remove('active')
-                    contents[index].classList.remove('active')
-                }
+
+                // 這是我做的
+                // for (let index = 0; index < btns.length; index++) {
+                //     btns[index].classList.remove('active')
+                //     contents[index].classList.remove('active')
+                // }
+
+                clearAllActive () //老師這樣做
+
                 btns[index].classList.add('active')
                 contents[index].classList.add('active')
             }

@@ -536,11 +536,11 @@
             width: 28px;
             height: 28px;
             margin-right: 18px;
-            background-color: rgba(0, 0, 0, 0.479);
+
         }
 
         .focous picture:hover{
-            opacity: 0.6;
+            -webkit-filter:contrast(0.8);
         }
 
         .pic5 {
@@ -559,15 +559,17 @@
             background-image: url(https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RWyG26?ver=8f21&q=90&m=6&h=201&w=358&b=%23FFFFFFFF&l=f&o=t&aim=true);
         }
 
-        footer{
+        .footer{
             background-color: #F2F2F2;
         }
 
-        footer .container{
+
+        footer{
             max-width: 1600px;
             margin: auto;
         }
 
+        
         .information{
             width: 100%;
             display: flex;
@@ -628,6 +630,7 @@
             font-size: 12px;
             color: #616161;
         }
+
 
         @media(max-width:1366px){
             .option-lists{
