@@ -55,40 +55,52 @@
     <script>
         var GamePanel = document.querySelector('.game-panel')
         var level = 1
-
         
-
+        
         newGame()
 
         function newGame() {
+            //隨機顏色
+            let color = `${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)}`
 
-            let color = `${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)}`
+            var num = Math.pow(level, 2)
             // 產生方塊
-
             // 調整方塊數量大小
-            // 產生一個隨機顏色，賦予方塊
-            for (let index = 0; index < 9; index++) {
-                GamePanel.innerHTML += `<div class="box"style="width:calc(100%/3);height:calc(100%/3);background-color:rgb(${color})"></div>`
+            for (let index = 0; index < num; index++) {
+                GamePanel.innerHTML += `<div class="box"style="width:calc(100%/${level});height:calc(100%/${level});background-color:rgb(${color})"></div>`
+                
             }
+            
 
             // 隨機產生正解方塊
             var boxes = document.querySelectorAll(".box")
-            boxes[Math.floor(Math.random()*10)].classList.add('ans')
-            console.log(boxes);
+            boxes[Math.floor(Math.random() * num)].classList.add('ans')
+            console.log(num);
 
             // 正解方塊透明度調整
             var ans = document.querySelector(".ans")
-            ans.style.opacity = 0.5
+            ans.style.opacity = level / 10
 
-            // 幫正解方塊加上onclick事件
-            ans.onclick = function(){
-                alert("答對了")
-                GamePanel.innerHTML=``
+            
+            //清除重複出現方塊
+            function clean() {
+                GamePanel.innerHTML = ``
                 newGame()
             }
 
+            // 幫正解方塊加上onclick事件
             // 當玩家按到這個方塊(正解)的時候，開啟下一關
             // 如果level = 10 的時候顯示過關，並重置遊戲
+            ans.onclick = function () {
+                if (level < 9) {
+                    level++
+                    clean()
+                }else{
+                    alert("答對了")
+                    level = 1
+                    clean()
+                }
+            }
         }
     </script>
 </body>
