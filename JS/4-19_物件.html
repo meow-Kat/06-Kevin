@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .card-group {
+            width: 100%;
+            height: 50vh;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+        }
+
+        .card-group2 {
+            width: 100%;
+            height: 50vh;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+        }
+
+        .card {
+            width: 400px;
+            height: 400px;
+            background-color: azure;
+        }
+
+        .photo {
+            width: 100%;
+            height: 70%;
+            background-color: blanchedalmond;
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .content {
+            width: 100%;
+            height: 30%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card-group">
+        <!-- 這裡面不用放東西，讓東西自己長 -->
+    </div>
+
+    <div class="card-group2">
+        <!-- foreach -->
+    </div>
+
+    <script>
+        var card_group = document.querySelector('.card-group')
+        var card_group2 = document.querySelector('.card-group2')
+        var card = document.querySelectorAll('.card')
+
+
+        var a = {
+            img: 'https://pic.pimg.tw/h22547890/1610871198-2933991324-g.jpg',
+            name: '鳳梨檸檬摩奇多',
+            price: '65',
+            contain: '鳳梨+檸檬+很多情緒+水'
+        }
+
+        var b = {
+            img: 'https://pic.pimg.tw/h22547890/1610871198-3387391407-g.jpg',
+            name: '洛神蜜露摩奇多 ',
+            price: '80',
+            contain: '洛神+花+蜂蜜+晨露+很多情緒+水'
+        }
+
+        var c = {
+            img: 'https://pic.pimg.tw/h22547890/1610871218-539602269-g.jpg',
+            name: '鐵觀音歐蕾 ',
+            price: '85',
+            contain: '鐵+觀音+歐洲的雷'
+        }
+
+        var d = {
+            img: 'https://pic.pimg.tw/h22547890/1610871234-4283504678-g.jpg',
+            name: ' 芭樂青檸檬 ',
+            price: '75',
+            contain: '芭樂+青色顏料+檸檬+自來水'
+        }
+
+
+        card = [a, b, c, d]
+
+        console.log(card);
+
+        for (let index = 0; index < card.length; index++) {
+
+            //樣板寫在這裡      用+=出其他的卡片   用這個方式把東西加進去：${card[index].標籤}
+            card_group.innerHTML += `
+        <div class="card">
+            <div class="photo">
+                <img src="${card[index].img}"alt="">
+            </div>
+            <div class="content">
+                <p>品名：${card[index].name}</p>
+                <p>價格：${card[index].price}</p>
+                <p>內容物：${card[index].contain}</p>
+            </div>
+        </div>`
+        }
+
+
+        //forEach版 取index變成 array.forEach(element => {(element,index)
+        card.forEach(element => {
+            card_group2.innerHTML += `
+        <div class="card">
+            <div class="photo">
+                <img src="${element.img}"alt="">
+            </div>
+            <div class="content">
+                <p>品名：${element.name}</p>
+                <p>價格：${element.price}</p>
+                <p>內容物：${element.contain}</p>
+            </div>
+        </div>`
+        });
+
+        var arr = ["甲", "乙", "丙"]
+
+// foreach 原版
+// arr.forEach(function(element,index){
+//     console.log(element + "是第 "+index+"個");
+// });
+
+// 箭頭函式 版本
+// arr.forEach((element,index) => {
+//     console.log(element + "是第 "+index+"個");
+// });
+
+
+    </script>
+</body>
+
+</html>

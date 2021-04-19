@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .card-group {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-content: flex-start;
+        }
+
+        .card {
+            width: 400px;
+            height: 600px;
+            background-color: wheat;
+            margin: 0 0 80px 0;
+        }
+
+        .photo {
+            width: 100%;
+            height: 70%;
+            background-color: red;
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .content {
+            width: 100%;
+            height: 30%;
+            padding: 10px 0;
+            background-color: violet;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card-group"></div>
+
+    <script>
+        // object  obj
+
+        //   key(鍵) : value(值),
+
+        var Justin = {
+            img: "https://www.dogstrust.org.uk/help-advice/_images/164742v800_puppy-1.jpg",
+            age: "24",
+            gender: "男",
+            food: "牛肉"
+        }
+
+        // 4種飲料 品名 價錢 內容物
+
+        var card_group = document.querySelector('.card-group')
+        
+        // card_group.innerHTML = '<div class="card"><div class="photo"><img src="" alt=""></div><div class="content"><p>年齡</p><p>性別</p><p>喜歡的食物</p></div></div>'
+        
+        
+        // 樣板字串  ``
+        card_group.innerHTML = `
+        <div class="card">
+            <div class="photo">
+                <img src="${Justin.img}" alt="">
+            </div>
+            <div class="content">
+                <p>年齡:${Justin.age}</p>
+                <p>性別:${Justin.gender}</p>
+                <p>喜歡的食物:${Justin.food}</p>
+            </div>
+        </div>`
+    
+        
+        // console.log(card_group);
+
+        console.log("我的年齡是" + Justin.age);
+
+    </script>
+</body>
+
+</html>
