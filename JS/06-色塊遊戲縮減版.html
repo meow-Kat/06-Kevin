@@ -68,19 +68,18 @@
             // 調整方塊數量大小
             for (let index = 0; index < num; index++) {
                 GamePanel.innerHTML += `<div class="box"style="width:calc(100%/${level});height:calc(100%/${level});background-color:rgb(${color})"></div>`
-                
             }
             
 
             // 隨機產生正解方塊
             var boxes = document.querySelectorAll(".box")
             boxes[Math.floor(Math.random() * num)].classList.add('ans')
-            console.log(num);
+            
 
             // 正解方塊透明度調整
             var ans = document.querySelector(".ans")
             ans.style.opacity = level / 10
-
+            console.log(ans)
             
             //清除重複出現方塊
             function clean() {
