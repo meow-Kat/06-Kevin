@@ -55,8 +55,8 @@
     <script>
         var GamePanel = document.querySelector('.game-panel')
         var level = 1
-        
-        
+
+
         newGame()
 
         function newGame() {
@@ -69,18 +69,27 @@
             for (let index = 0; index < num; index++) {
                 GamePanel.innerHTML += `<div class="box"style="width:calc(100%/${level});height:calc(100%/${level});background-color:rgb(${color})"></div>`
             }
-            
+
 
             // 隨機產生正解方塊
-            var boxes = document.querySelectorAll(".box")
-            boxes[Math.floor(Math.random() * num)].classList.add('ans')
-            
+                var boxes = document.querySelectorAll(".box")
+                var boxes2 = boxes[Math.floor(Math.random() * num)].classList.add('ans') + boxes[Math.floor(Math.random() * num)].classList.add('ans')
+                console.log(boxes);
 
             // 正解方塊透明度調整
             var ans = document.querySelector(".ans")
-            ans.style.opacity = level / 10
             console.log(ans)
-            
+                ans.style.opacity = level / 10
+        
+            //做兩個  querySelectorAll是"陣列"
+            // var ans = document.querySelectorAll(".ans")
+            // console.log(ans)
+            // for (let index = 0; index < 2; index++) {
+            //     ans[index].style.opacity = level / 10
+            // }
+            // console.log(ans);
+
+
             //清除重複出現方塊
             function clean() {
                 GamePanel.innerHTML = ``
@@ -94,7 +103,7 @@
                 if (level < 9) {
                     level++
                     clean()
-                }else{
+                } else {
                     alert("答對了")
                     level = 1
                     clean()
