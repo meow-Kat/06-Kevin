@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .canvas {
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(128, 128, 128, 0.6);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .game-panel {
+            width: 600px;
+            height: 600px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 16px;
+
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            width: 100%;
+            height: 100%;
+            border: 2px solid white;
+            background-color: wheat;
+            border-radius: 8px; 
+            
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="canvas">
+        <div class="game-panel">
+            <!-- <div class="box"></div> -->
+        </div>
+    </div>
+
+    <script>
+        // 產生方塊
+        // 調整方塊數量大小
+        // 產生一個隨機顏色，賦予方塊
+        // 隨機產生正解方塊
+        // 正解方塊透明度調整
+        // 幫正解方塊加上onclick事件
+        // 當玩家按到這個方塊(正解)的時候，開啟下一關
+        // 如果level = 10 的時候顯示過關，並重置遊戲
+
+        var GamePanel = document.querySelector('.game-panel'); //遊戲方塊群組
+        var level = 1;  //遊戲等級初始化
+        var opacityValue = 0.5; //答案方塊初始透明度
+        
+        
+        newGame(opacityValue) ; //執行遊戲函式 帶入透明值(過關後累計)
+       
+        function newGame(opacityValue) {
+            var length = 100 ; //百分比數值
+            length = length / level ; // 改變方塊大小 等級2方塊是 2X2 => 每個方塊長寬是原本一半 50% => 100/2(現在等級) 以此類推
+            var r = Math.floor(Math.random() * 255);  //設定三種顏色隨機變數
+            var g = Math.floor(Math.random() * 255);  //設置在產生方塊的迴圈外 顏色才會一樣  
+            var b = Math.floor(Math.random() * 255);  //如果設在產生方塊的迴圈內每產生一個顏色都會改變 造成顏色不一的結果
+            //產生方塊的迴圈 假設level 3 => 方塊會有9個 = 3X3 所以直接使用level的平方限制迴圈大小
+            for (let i = 0; i < level ** 2 ; i++) {   
+                GamePanel.innerHTML +=  //使用 += 才會產生多個方塊 若使用 = 會覆蓋前面的方塊 
+                // ` ....HTML ` 為樣板字串
+                `
+                <div class="box"  ></div> 
+                ` 
+                var boxs = document.querySelectorAll('.box'); //??? 將選到class = box 的標籤丟到 boxs 陣列裡
+                console.log(boxs[i].style);  
+                var boxStyle =  boxs[i].style ; //選取到boxs 的樣式
+                // 測試用
+                // r = 240; 
+                // g = 240;
+                // b = 240;
+
+                var color = "rgb("+ r+","+ g+","+ b+")" // 背景RGB的HTML內容
+                console.log(color);
+                boxStyle.height =  ""+length+"%" ; //改變方塊的長寬比例
+                boxStyle.width =  ""+length+"%" ;
+                boxStyle.backgroundColor = color ; //設定方塊顏色
+                //顏色太淺時加上外框
+                if(r>230 && g>230 && b>230){
+                    boxStyle.border = "black 2px solid";
+                }
+                console.log(length);
+            }
+            var ansBoxNum = Math.floor(Math.random() * (level ** 2)) //設置答案方塊 採隨機變數從現在等級中隨機選擇陣列裡的編號
+            console.log(ansBoxNum+"答案編號");
+            var ans = boxs[ansBoxNum]; //選取到答案方塊標籤
+            console.log(ans+"第"+ansBoxNum+"陣列");
+            //當等級等於1時 透明度改成1 否則帶入傳入的透明值
+            if(level==1){
+                opacityValue = 1;
+                var ansStyle = (ans.style.opacity = ""+opacityValue+"" ); //選取到方塊陣列的css 透明度並給予值
+            }else{
+                var ansStyle = (ans.style.opacity = ""+opacityValue+"" );
+            }
+            // var ansStyle = ans.style.opacity = ""+opacityValue+"" ;
+            
+            // ans.classList.add('ansBox');
+            // var ansStyle = window.getComputedStyle(ans,null).getPropertyValue('opacity') ; 取某個標籤的css數值
+            console.log(ansStyle);
+            //點擊答案方塊時
+            ans.onclick = function(){
+                ansClick();
+            }
+        }  
+        // console.log(newGame()+"123"); 
+        // 點擊答案方塊後 level + 1  且 透明度 +0.05 將原有的方塊改成空字串 從新跑出下一級的方塊陣列
+        // 到等級十跳出視窗恭喜過關 level改成等級1 將原有的方塊改成空字串 透明度初始化       
+        function ansClick(){    
+            level = level + 1;
+            opacityValue = opacityValue + 0.05;
+            console.log(level);
+            GamePanel.innerHTML = "";
+            newGame(opacityValue);
+            console.log(opacityValue+"透明度");
+            console.log(level+"等級");
+
+            if(level == 10){
+                alert('恭喜過關')
+                level = 1;
+                GamePanel.innerHTML = "";
+                opacityValue = 0.5;
+                newGame(opacityValue);
+            }
+        }     
+            
+
+            
+
+            
+        
+    </script>
+</body>
+
+</html>

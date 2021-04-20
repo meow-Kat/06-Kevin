@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .canvas {
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(128, 128, 128, 0.6);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .game-panel {
+            width: 600px;
+            height: 600px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 16px;
+
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            width: 100%;
+            height: 100%;
+            border: 2px solid white;
+            background-color: wheat;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="canvas">
+        <div class="game-panel">
+        </div>
+    </div>
+
+    <script>
+        var GamePanel = document.querySelector('.game-panel');
+
+        var iLevel = 1;
+        newGame()
+
+        function newGame() {
+            // GamePanel.style['background-color'] = getcolors();
+            GamePanel.innerHTML = '';
+            
+            //產生box小方塊
+            for (let i = 0; i < iLevel; i++) {
+                for (let j = 0; j < iLevel; j++) {
+                    GamePanel.innerHTML += `
+                        <div class="box"></div>
+                        `
+                }
+            }
+
+            //更改box style
+            var GameBox = document.querySelectorAll('.box');
+            var blockcolors = getcolors();
+            GameBox.forEach(element => {
+                element.style['height'] = (100 / iLevel) + "%";
+                element.style['width'] = (100 / iLevel) + "%";
+                element.style['background-color'] = blockcolors;
+            });
+
+            //答案box 顏色更改
+            var iAmswer = getRandom(iLevel * iLevel);
+            GameBox[iAmswer].style['opacity'] = 0.5 + 0.05 * iLevel;
+            GameBox[iAmswer].onclick = function () {
+                iLevel++;
+                // alert("測試");
+                if (iLevel > 9) {
+                    alert("遊戲結束");
+                    iLevel = 1;
+                }
+                newGame()
+                console.log(iLevel);
+            }
+
+        }
+
+        function getcolors() {
+            return '#' + (0x1000000 + Math.random() * 0xffffff).toString(16).substr(1, 6);
+        }
+
+        function getRandom(x) {
+            return Math.floor(Math.random() * x);
+        };
+    </script>
+</body>
+
+</html>
