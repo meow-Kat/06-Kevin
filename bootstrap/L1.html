@@ -9,13 +9,37 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <style>
+        p {
+            margin: 0;
+        }
 
+
+        .pic {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            margin: auto;
+        }
+
+        .main-card1 {
+            border: none;
+            color:grey;
+        }
+
+        .featurette-divider {
+            margin: 80px 0;
+        }
+
+        .carousel-caption{
+            font-size: 1.25em;
+            margin-bottom: 4rem;
+        }
     </style>
 </head>
 
 <body>
     <!-- NAV -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
             aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,31 +73,29 @@
         </ol>
         <div class="carousel-inner">
             <!-- 輪播+文字1 -->
-            <div class="carousel-item active">
-                <img src="https://wallpapercave.com/wp/wp4470725.jpg" class="d-block w-100"
-                    alt="https://wallpapercave.com/wp/wp4470725.jpg">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5 class="card-title">Special title treatment</h5>
+            <div class="carousel-item active mb-5">
+                <img src="https://wallpaperaccess.com/full/2461297.jpg" class="d-block w-100 banner" alt="">
+                <div class="carousel-caption text-left">
+                    <h1 class="card-title">Special title treatment</h1>
                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                     <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
             <!-- 輪播+文字2 -->
-            <div class="carousel-item">
-                <img src="https://wallpapercave.com/wp/wp4470729.jpg" class="d-block w-100"
-                    alt="https://wallpapercave.com/wp/wp4470729.jpg">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5 class="card-title">Special title treatment</h5>
+            <div class="carousel-item mb-5">
+                <img src="https://wallpaperaccess.com/full/2461293.jpg" class="d-block w-100 banner" alt="">
+                <div class="carousel-caption">
+                    <h1 class="card-title">Special title treatment</h1>
                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                     <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
             <!-- 輪播+文字3 -->
-            <div class="carousel-item">
-                <img src="https://wallpaperaccess.com/full/1078199.jpg" class="d-block w-100"
-                    alt="https://wallpaperaccess.com/full/1078199.jpg">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5 class="card-title">Special title treatment</h5>
+            <div class="carousel-item mb-5">
+                <img src="https://sportsworldrunningclub.com/wp-content/uploads/2018/04/beautiful_night_city-wallpaper-1920x600.jpg"
+                    class="d-block w-100 banner" alt="">
+                <div class="carousel-caption text-right">
+                    <h1 class="card-title">Special title treatment</h1>
                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                     <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
@@ -94,73 +116,105 @@
         <!-- 3個並排卡片 -->
         <div class="container">
             <div class="row">
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
+                <div class="card col-lg-4 main-card1 mb-5">
+                    <img src="https://images.chinatimes.com/newsphoto/2020-08-04/656/20200804004318.jpg"
+                        class="card-img-top pic"
+                        alt="https://images.chinatimes.com/newsphoto/2020-08-04/656/20200804004318.jpg">
+                    <div class="card-body text-center">
+                        <h2 class="card-title">Card title</h2>
+                        <p class="card-text d-flex align-items-center">Some quick example text to build on the card
+                            title and make up the bulk
+                            of the card's content.</p>
+                        <a href="#" class="btn btn-secondary ">Go somewhere</a>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
+
+                <div class="card col-lg-4 main-card1 mb-5">
+                    <img src="https://petsmao-media.nownews.com/images/2019/10/5a56af32-1571795279-a7d32647e0a334efbedeb39fdbad225a.jpg"
+                        class="card-img-top pic" alt="...">
+                    <div class="card-body text-center">
+                        <h2 class="card-title">Card title</h2>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                            of the card's content.</p>
+                        <a href="#" class="btn btn-secondary">Go somewhere</a>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
+
+                <div class="card col-lg-4 main-card1 mb-5">
+                    <img src="https://dogcatstar.atomcdn.com/2020/03/09/976165/5cbc5e7c10abfdbb2c0edb6112de3234_s.jpg"
+                        class="card-img-top pic" alt="...">
+                    <div class="card-body text-center">
+                        <h2 class="card-title">Card title</h2>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                            of the card's content.</p>
+                        <a href="#" class="btn btn-secondary">Go somewhere</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- 左右圖文卡片 -->
+        <!-- 左右圖文卡片  右 -->
         <div class="container">
-            <div class="row">
-                <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
+
+            <hr class="featurette-divider">
+            <div class="row ">
+
+                <div class="col-12 col-md-7 d-flex align-items-center">
                     <div class="card-body">
+                        <h1>H1<span class="text-muted">SPAN</span></h1>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the card's content.</p>
                     </div>
                 </div>
-                <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                    </div>
+                <div class="col-12 col-md-5 ">
+                    <img class="w-100" src="./sample.png" class="card-img-top" alt="...">
                 </div>
             </div>
+
+            <!-- 左 -->
+            <hr class="featurette-divider">
+            <div class="row flex-row-reverse">
+
+                <div class="col-12 col-md-7 d-flex align-items-center">
+                    <div class="card-body">
+                        <h1>H1<span class="text-muted">SPAN</span> </h1>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-5">
+                    <img class="w-100" src="./sample.png" class="card-img-top" alt="...">
+                </div>
+            </div>
+            <!-- 右 -->
+
+            <hr class="featurette-divider">
+            <div class="row">
+
+                <div class="col-12 col-md-7 d-flex align-items-center">
+                    <div class="card-body">
+                        <h1>H1<span class="text-muted">SPAN</span></h1>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-5">
+                    <img class="w-100" src="./sample.png" class="card-img-top " alt="...">
+                </div>
+            </div>
+            <hr class="featurette-divider">
+
         </div>
     </main>
     <!-- footer -->
     <footer>
         <div class="container">
-
+            <nav class="nav d-flex align-items-center mb-5">
+                <span>© 2017-2018 Company, Inc.</span>
+                <a class="nav-link" href="#">Privacy</a>
+                <a class="nav-link" href="#">Terms</a>
+                <a class="nav-link ml-auto p-0" href="#">Back to Top</a>
+            </nav>
         </div>
     </footer>
 
