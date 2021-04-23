@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .nav-h {
+            height: 92px;
+        }
+
+        .banner {
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: calc(100vh - 92px);
+        }
+
+        .my-icon {
+            font-size: 30px;
+        }
+
+        .b1 {
+            background-image: url(https://wallpaperaccess.com/full/109672.jpg);
+        }
+
+        .b2 {
+            background-image: url(https://www.10wallpaper.com/wallpaper/1920x1080/1411/blue_reflections-Abstract_widescreen_wallpaper_1920x1080.jpg);
+        }
+
+        .b3 {
+            background-image: url(https://www.10wallpaper.com/wallpaper/1920x1080/1307/explosion_bright_light-Abstract_design_wallpaper_1920x1080.jpg);
+        }
+
+        .my-p {
+            position: relative;
+        }
+
+        .my-p::after {
+            width: 64px;
+            height: 4px;
+            content: '';
+            background-color: blueviolet;
+            position: absolute;
+            left: 50%;
+            bottom: -20px;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .my-icon1 {
+            width: 80px;
+            height: 80px;
+            background-color: cadetblue;
+            border-radius: 50%;
+            color: rgb(253, 253, 253);
+            margin: auto;
+
+        }
+
+        .my-auto {
+            margin: auto;
+        }
+
+        .table-tittle {
+            background-color: #F3F4F6;
+        }
+
+        .check {
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAV -->
+    <div class="container">
+        <div class="col">
+            <nav class="navbar navbar-expand-lg navbar-light nav-h">
+                <a class="navbar-brand" href="#">
+                    <img src="./logo.svg" width="106" height="60" alt="">
+                </a>
+                <!-- 隱藏按鈕 -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <!-- 右 -->
+                    <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+                        <div class="navbar-nav ml-auto d-flex align-items-center">
+                            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-item nav-link" href="#">Features</a>
+                            <a class="nav-item nav-link" href="#">Pricing</a>
+                            <a class="nav-item nav-link disabled" href="#" tabindex="-1"
+                                aria-disabled="true">Disabled</a>
+                            <a class="navbar-brand my-icon" href="#">
+                                <i class="fas fa-shopping-cart my-icon"></i>
+                            </a>
+                            <a class="navbar-brand" href="#">
+                                <i class="fas fa-user-circle my-icon"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- main -->
+    <main>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner mb-5">
+                <!-- 輪播1 -->
+                <div class="carousel-item active">
+                    <div class="banner b1"></div>
+                    <div class="carousel-caption text-left"></div>
+                </div>
+                <!-- 輪播+文字2 -->
+                <div class="carousel-item">
+                    <div class="banner b2"></div>
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+                <!-- 輪播+文字3 -->
+                <div class="carousel-item">
+                    <div class="banner b3"></div>
+                    <div class="carousel-caption text-right">
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+        <!-- Main title -->
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col text-center ">
+                    <h3>Raw Denim Heirloom Man Braid</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-8 m-auto text-center">
+                    <p class="my-p">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub
+                        indxgo juice poutine, ramps microdosing banh mi pug.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 並排3張卡 -->
+        <div class="container mY-5 pY-5">
+            <div class="row">
+                <div class="col-sm-4  card border-0 mb-5">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="my-icon1 mb-4" viewBox="-5 -5 35 35">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                    </svg>
+                    <div class="card-body text-center p-0">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text d-flex align-items-center">Some quick example text to build on the card
+                            title and make up the bulk
+                            of the card's content.</p>
+                        <a href="#" class="card-link">Card link</a>
+                    </div>
+                </div>
+
+                <div class="col-sm-4  card border-0 mb-5">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="my-icon1 mb-4" viewBox="-5 -5 35 35">
+                        <circle cx="6" cy="6" r="3"></circle>
+                        <circle cx="6" cy="18" r="3"></circle>
+                        <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
+                    </svg>
+                    <div class="card-body text-center p-0">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                            of the card's content.</p>
+                        <a href="#" class="card-link">Card link</a>
+                    </div>
+                </div>
+
+                <div class="col-sm-4  card border-0 mb-5">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="my-icon1 mb-4" viewBox="-5 -5 35 35">
+                        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <div class="card-body text-center p-0">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                            of the card's content.</p>
+                        <a href="#" class="card-link">Card link</a>
+                    </div>
+                </div>
+            </div>
+            <!-- 按鈕 -->
+            <div class="rol">
+                <div class="col text-center">
+                    <button type="button" class="btn btn-primary btn-lg ">Large button</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 一堆圖不同尺寸 -->
+        <!-- 標題 -->
+        <div class="container mt-5 pY-5">
+            <div class="row no-gutters p-2">
+                <div class="col-lg-5">
+                    <h3>Card title aaaa aaaa aaa aa a</h3>
+                </div>
+                <div class="col-lg-7">
+                    <p>Some quick example text to build on the card title and make up
+                        the
+                        bulk of the card's content.</p>
+                </div>
+            </div>
+
+
+            <!-- 很多圖 -->
+            <div class="row no-gutters mb-5 pb-5">
+                <div class="col-6">
+                    <div class="row no-gutters">
+                        <div class="col-6 p-2">
+                            <img src="https://dummyimage.com/270x300" alt="" class="w-100">
+                        </div>
+                        <div class="col-6 p-2">
+                            <img src="https://dummyimage.com/270x300" alt="" class="w-100">
+                        </div>
+
+                        <div class="col-12 p-2">
+                            <img src="https://dummyimage.com/540x300" alt="" class="w-100">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="row no-gutters">
+                        <div class="col-6 p-2 order-2">
+                            <img src="https://dummyimage.com/270x300" alt="" class="w-100 ">
+                        </div>
+                        <div class="col-6 p-2 order-1">
+                            <img src="https://dummyimage.com/270x300" alt="" class="w-100">
+                        </div>
+
+                        <div class="col-12 p-2">
+                            <img src="https://dummyimage.com/540x300" alt="" class="w-100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 購物 -->
+
+            <div class="row py-5">
+                <div class="col-8 m-auto text-center mb-5">
+                    <h2>Pricing</h2>
+                    <p>Banh mi cornhole echo park skateboard authentic crucifix neutra tilde lyft biodiesel artisan
+                        direct trade mumblecore 3 wolf moon twee</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <table class="table text-center">
+                    <thead>
+                        <tr class="table-tittle">
+                            <th scope="col">plan</th>
+                            <th scope="col">Speed</th>
+                            <th scope="col">Storage</th>
+                            <th scope="col">Price</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Start</th>
+                            <td>5 Mb/s</td>
+                            <td>15 GB</td>
+                            <td>Free</td>
+                            <td class="check"><input type="radio" name="chenk-buy" id=""></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Pro</th>
+                            <td>25 Mb/s</td>
+                            <td>25 GB</td>
+                            <td>$24</td>
+                            <td class="check"><input type="radio" name="chenk-buy" id=""></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Business</th>
+                            <td>36 Mb/s</td>
+                            <td>40 GB</td>
+                            <td>$50</td>
+                            <td class="check"><input type="radio" name="chenk-buy" id=""></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Exclusive</th>
+                            <td>48 Mb/s</td>
+                            <td>120 GB</td>
+                            <td>$72</td>
+                            <td class="check">
+                                <input type="radio" name="chenk-buy" id="">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row">
+                <div class="col d-flex justify-content-sm-between">
+                    <span class=""><a href="">Learn More</a></span>
+                    <button type="button" class="btn btn-primary">Primary</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
