@@ -1,0 +1,145 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+i {
+    font-style: normal;
+}
+
+p {
+    margin: 0;
+}
+
+.nav-h {
+    height: 92px;
+}
+
+.banner {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: calc(100vh - 92px);
+}
+
+.my-icon {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.b1 {
+    background-image: url(https://wallpaperaccess.com/full/109672.jpg);
+}
+
+.b2 {
+    background-image: url(https://www.10wallpaper.com/wallpaper/1920x1080/1411/blue_reflections-Abstract_widescreen_wallpaper_1920x1080.jpg);
+}
+
+.b3 {
+    background-image: url(https://www.10wallpaper.com/wallpaper/1920x1080/1307/explosion_bright_light-Abstract_design_wallpaper_1920x1080.jpg);
+}
+
+.my-p {
+    position: relative;
+}
+
+.my-p::after {
+    width: 64px;
+    height: 4px;
+    content: '';
+    background-color: blueviolet;
+    position: absolute;
+    left: 50%;
+    bottom: -20px;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.my-icon1 {
+    width: 80px;
+    height: 80px;
+    background-color: cadetblue;
+    border-radius: 50%;
+    color: rgb(253, 253, 253);
+    margin: auto;
+}
+
+.table-tittle {
+    background-color: #F3F4F6;
+}
+
+.check {
+    text-align: right;
+}
+
+.link-more::after {
+    content: "　→";
+    width: 30px;
+}
+
+.featurette-divider {
+    margin: 0;
+    width: 100%;
+}
+
+.my-icon2 {
+    /* width: 128px; */
+    height: 128px;
+    padding: 35px;
+    border-radius: 50%;
+    background-color: #E0E7FF;
+}
+
+.my-photo {
+    width: 50vw;
+    height: 50vw;
+}
+
+.color {
+    width: 20px;
+    height: 20px;
+    border: 2px solid darkgrey;
+    border-radius: 50%;
+}
+
+.color-black {
+    background-color: black;
+}
+
+.color-purple {
+    background-color: blueviolet;
+}
+
+.heart {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+}
+
+.my-map {
+    width: 100%;
+    height: 75vh;
+    filter: grayscale(1);
+    opacity: 0.8;
+}
+
+.text-smll-size {
+    font-size: 6px;
+}
+
+.map-rol {
+    height: 75vh;
+}
+
+.map-col {
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
