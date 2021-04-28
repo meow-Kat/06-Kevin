@@ -86,7 +86,12 @@ a{
     display: block;
 }
 
-@media(min-width:980px) {
+.log-text{
+    font-size: 62px;
+    font-weight: 900;
+}
+
+@media(min-width:992px) {
     .left-bottom{
         width: 50%;
         bottom: 0;

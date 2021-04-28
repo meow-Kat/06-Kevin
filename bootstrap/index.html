@@ -16,35 +16,34 @@
     <!-- NAV -->
     <div class="container ">
         <div class="col">
-            <nav class="navbar navbar-expand-lg navbar-light nav-h">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="#">
                     <img src="./img/logo.svg" width="106" height="60" alt="">
                 </a>
-                <!-- 隱藏按鈕 -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse " id="navbarSupportedContent">
-                    <!-- 右 -->
-                    <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
-                        <div class="navbar-nav ml-auto d-flex align-items-center">
-                            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-                            <a class="nav-item nav-link" href="#">Features</a>
-                            <a class="nav-item nav-link" href="#">Pricing</a>
-                            <a class="nav-item nav-link disabled" href="#" tabindex="-1"
-                                aria-disabled="true">Disabled</a>
-                            <a class="navbar-brand my-icon" href="#">
-                                <i class="fas fa-shopping-cart my-icon"></i>
-                            </a>
-                            <a class="navbar-brand" href="#">
-                                <i class="fas fa-user-circle my-icon"></i>
-                            </a>
-                        </div>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="navbar-nav ml-auto d-flex align-items-center">
+                        <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-item nav-link" href="#">Features</a>
+                        <a class="nav-item nav-link" href="#">Pricing</a>
+                        <a class="navbar-brand my-icon" href="#">
+                            <i class="fas fa-shopping-cart my-icon"></i>
+                        </a>
 
+                        <div class="btn-group">
+                            <button type="button" class="btn " data-toggle="dropdown" data-display="static"
+                                aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-user-circle my-icon"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-lg-right">
+                                <button class="dropdown-item" type="button">login</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </nav>
+              </nav>
         </div>
     </div>
     <!-- main -->
