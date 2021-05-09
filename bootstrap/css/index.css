@@ -1,24 +1,4 @@
 
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-}
-
-i {
-    font-style: normal;
-}
-
-p {
-    margin: 0;
-}
-
-.nav-h {
-    height: 92px;
-}
-
 .banner {
     background-position: center;
     background-size: cover;

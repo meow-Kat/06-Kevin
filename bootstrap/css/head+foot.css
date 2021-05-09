@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+    transition: 0.2s;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+}
+
+i {
+    font-style: normal;
+}
+
+p,h5 {
+    margin: 0;
+}
+
+.nav-window{
+    height: 62px;
+    padding: 0 3%;
+}
+
+.logo-footer-pic{
+    width: 40px;
+}
+
+@media(min-width:768px){
+    .nav-window{
+        max-width: 1280px;
+        height: 92px;
+    }
+}
+
+@media(min-width:1280px){
+    .nav-window{
+        padding: unset;
+    }
+}

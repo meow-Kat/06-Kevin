@@ -10,36 +10,38 @@
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="./css/shopping1.css">
+    <link rel="stylesheet" href="./css/head+foot.css">
 </head>
 
 <body>
     <!-- NAV -->
     <div class="container ">
         <div class="col">
-            <nav class="navbar navbar-expand-lg navbar-light nav-h">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="#">
                     <img src="./img/logo.svg" width="106" height="60" alt="">
                 </a>
-                <!-- 隱藏按鈕 -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse " id="navbarSupportedContent">
-                    <!-- 右 -->
-                    <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
-                        <div class="navbar-nav ml-auto d-flex align-items-center">
-                            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-                            <a class="nav-item nav-link" href="#">Features</a>
-                            <a class="nav-item nav-link" href="#">Pricing</a>
-                            <a class="nav-item nav-link disabled" href="#" tabindex="-1"
-                                aria-disabled="true">Disabled</a>
-                            <a class="navbar-brand mx-1" href="#">
-                                <i class="fas fa-shopping-cart my-icon"></i>
-                            </a>
-                            <a class="navbar-brand mx-1" href="#">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="navbar-nav ml-auto d-flex align-items-center">
+                        <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-item nav-link" href="#">Features</a>
+                        <a class="nav-item nav-link" href="#">Pricing</a>
+                        <a class="navbar-brand my-icon" href="#">
+                            <i class="fas fa-shopping-cart my-icon"></i>
+                        </a>
+
+                        <div class="btn-group">
+                            <button type="button" class="btn " data-toggle="dropdown" data-display="static"
+                                aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-user-circle my-icon"></i>
-                            </a>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-lg-right">
+                                <button class="dropdown-item" type="button">login</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -201,14 +203,41 @@
     </main>
 
 
-    <footer class=" ">
-        <div class="container pt-5">
+    <footer class="">
+        <div class="container">
             <div class="row my-5">
                 <div class="col d-flex flex-wrap align-items-center">
                     <div class="col-12 col-sm-3 text-center text-sm-left">
                         <div class="col-6 col-sm-12 m-auto p-0">
-                            <div></div>
-                            <h5>數位方塊</h5>
+                            <div class="logo-footers d-flex mb-2">
+                                <div class="logo-footer-pic">
+                                    <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 40 40">
+                                        <defs>
+                                            <style>
+                                                .cls-1 {
+                                                    fill: #162446;
+                                                }
+
+                                                .cls-2 {
+                                                    fill: #fff;
+                                                }
+                                            </style>
+                                        </defs>
+                                        <title>資產 2</title>
+                                        <g id="圖層_2" data-name="圖層 2">
+                                            <g id="圖層_1-2" data-name="圖層 1">
+                                                <circle class="cls-1" cx="20" cy="20" r="20"></circle>
+                                                <path class="cls-2"
+                                                    d="M20,7l7.13,4.11a7.91,7.91,0,0,1,3.95,6.84v6.8l-8.61-5V18.32l7.37,4.26V18.63a7.89,7.89,0,0,0-3.95-6.85L21.28,9.1V33.25L9,26.14V13.35l5.89,3.4a7.91,7.91,0,0,1,3.95,6.85v4.76l-1.23-.71V24.31a7.92,7.92,0,0,0-4-6.85l-3.42-2v9.94L20,31.11Z">
+                                                </path>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <h5 class="m-2">數位方塊</h5>
+                            </div>
+
                             <span>Air plant banjo lyft occupy retro adaptogen indego</span>
                         </div>
 
