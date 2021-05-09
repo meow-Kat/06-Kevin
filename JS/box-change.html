@@ -28,28 +28,79 @@
             height: 200px;
             background-color: royalblue;
         }
+
+
+        .box{
+            width: 500px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+        }
+
+        .plus{
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+        }
+
+        .minus{
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+        }
+
+        .num{
+            width: 200px;
+            height: 100px;
+        }
     </style>
 </head>
 <body>
-    <div class="boxA">紅色的箱子</div>
-    <div class="boxB">綠色的箱子</div>
-    <div class="boxC"></div>
+    <!-- <div class="boxA">紅色的箱子</div> -->
+    <!-- <div class="boxB">綠色的箱子</div> -->
+    <!-- <div class="boxC"></div> -->
+    <div class="box">
+        <div class="minus">-</div>
+        <input type="number" class="num">
+        <div class="plus">+</div>
+    </div>
 
     <script>
-       var boxA = document.querySelector('.boxA')
-       var boxB = document.querySelector('.boxB')
+    //    var boxA = document.querySelector('.boxA')
+    //    var boxB = document.querySelector('.boxB')
 
-       boxA.onclick = function(){
-            console.log('箱子被按到拉');
-            boxA.classList.add('clicked')
-        }
+    //    boxA.onclick = function(){
+            // console.log('箱子被按到拉');
+            // boxA.classList.add('clicked')
+        // }
 
-        boxB.onclick = function(){
-            console.log('箱子被按到拉');
-            boxA.classList.remove('clicked')
-        }
+        // boxB.onclick = function(){
+            // console.log('箱子被按到拉');
+            // boxA.classList.remove('clicked')
+        // }
 
-        
+            var plus = document.querySelector('.plus')
+            var minus = document.querySelector('.minus')
+            var num = document.querySelector('.num')
+            
+            var a = 5
+            
+
+            
+
+            plus.onclick = function(){
+                
+                a++
+                num.Value = a
+                return num.Value
+            }
+
+            minus.onclick = function(){
+                a--
+                console.log(a);
+            }
+
+            console.log(num.Value);
         
 
 
