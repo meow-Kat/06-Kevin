@@ -17,23 +17,68 @@ p,h5 {
 }
 
 .nav-window{
-    height: 62px;
-    padding: 0 3%;
+    padding: 0 16px;
+}
+
+.nav-img{
+    height: 45px;
+}
+
+.login-option{
+    width: 98vw;
+    top: 0;
+    left: -204px;
+}
+
+.my-link-ctrl{
+    border-radius: 5px;
+}
+
+.my-link-ctrl:hover{
+    background-color: darkgrey;
+}
+
+.my-icon {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.icon-car{
+    font-size: 24px;
 }
 
 .logo-footer-pic{
     width: 40px;
 }
 
-@media(min-width:768px){
+.text-ctrl{
+    font-size: 8px;
+}
+
+
+@media(min-width:770px){
     .nav-window{
-        max-width: 1280px;
-        height: 92px;
+        max-width: 1216px;
+    }
+
+    .nav-img{
+        height: 60px;
+    }
+
+    .login-option{
+        width: 86%;
+    }
+}
+
+@media(min-width:992px){
+    .nav-window{
+        padding: 0 24px;
     }
 }
 
 @media(min-width:1280px){
     .nav-window{
-        padding: unset;
+        padding: 0 32px;
     }
 }

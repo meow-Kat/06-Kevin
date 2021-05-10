@@ -1,27 +1,33 @@
-
-.banner {
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: calc(100vh - 92px);
+/* banner */
+.swiper-container {
+    width: 100%;
+    height: calc(50vh - 92px);
 }
 
-.my-icon {
-    font-size: 30px;
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
 }
 
-.b1 {
-    background-image: url(https://wallpaperaccess.com/full/109672.jpg);
-}
-
-.b2 {
-    background-image: url(https://www.10wallpaper.com/wallpaper/1920x1080/1411/blue_reflections-Abstract_widescreen_wallpaper_1920x1080.jpg);
-}
-
-.b3 {
-    background-image: url(https://www.10wallpaper.com/wallpaper/1920x1080/1307/explosion_bright_light-Abstract_design_wallpaper_1920x1080.jpg);
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .my-p {
@@ -67,17 +73,22 @@
     width: 100%;
 }
 
-.my-icon2 {
-    /* width: 128px; */
-    height: 128px;
-    padding: 35px;
-    border-radius: 50%;
-    background-color: #E0E7FF;
-}
-
 .my-photo {
     width: 50vw;
     height: 50vw;
+}
+
+.my-icon2{
+    width: 80px;
+    height: 80px;
+    padding: 20px;
+    background-color: #E0E7FF;
+    border-radius: 50%;
+}
+
+.buy-size{
+    width: 100%;
+    height: 256px;
 }
 
 .color {
@@ -101,6 +112,10 @@
     border-radius: 50%;
 }
 
+.map-box{
+    position: relative;
+}
+
 .my-map {
     width: 100%;
     height: 75vh;
@@ -112,14 +127,46 @@
     font-size: 6px;
 }
 
-.map-rol {
-    height: 75vh;
-}
 
-.map-col {
-    right: 0;
+
+.map-feedback{
+    position: absolute;
+    width: 440px;
+    left: 50%;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translate(-50% , -50%);
 }
 
 
+
+@media(min-width:540px){
+    .map-feedback{
+        width: 520px;
+    }
+
+    
+}
+
+@media(min-width:770px){
+    .swiper-container {
+        width: 100%;
+        height: calc(100vh - 92px);
+    }
+    
+    .buy-size{
+        width: 100%;
+        height: unset;
+    }
+
+    .my-icon2{
+        width: 128px;
+        height: 128px;
+        padding: 35px;
+    }
+    .map-feedback{
+        width: unset;
+        min-width: 350px;
+        left: 70%;
+    }
+    
+}
