@@ -160,6 +160,7 @@
                                             <span class="add" onclick="add(this)">+</span>
                                         </div>
                                         <p class="my-order-price px-4" data-price="33">$ 33</p>
+                                        <span class="my-order-price-base d-none">33</span>
                                     </div>
 
                                 </div>
@@ -316,23 +317,44 @@
         let total_price = document.querySelector('.total-price')
         let total_all = document.querySelector('.total-all')
 
+        let price_base = document.querySelectorAll('.my-order-price')
 
+        function update() {
+            let sum_count = 0
+            let sum_calc = 0
+            //算總數
+            for (let i = 0; i < count_num.length; i++) {
+                sum_count += parseInt(count_num[i].value)
+            }
+            total_num.innerHTML = sum_count
 
+            //算小記
+            for (let i = 0; i < count_num.length; i++) {
+                sum_calc = parseInt(count_num[i].value) * parseInt(price.dataset.price)
+            }
+            
+            total_price.innerHTML = `$ ` + sum_calc
+            
+        }
 
 
         //+ - 按鈕
         function add(ele) {
             let num = ele.parentNode.children[1]
             let price = ele.parentNode.parentNode.children[1]
+            let unit = ele.parentNode.parentNode.parentNode.children[1]
             num.value = parseInt(num.value) + 1
             price.innerHTML = `$ ` + parseInt(num.value) * parseInt(price.dataset.price)
 
             for (let index = 0; index < count_num.length; index++) {
                 //數量
-                total_num.innerHTML = parseInt(count_num[0].value) + parseInt(count_num[1].value) + parseInt(count_num[2].value)
+                count_num[index].addEventListener('click', update())
+                
+            }
 
+            for (let index = 0; index < count_num.length; index++) {
                 //小計
-                total_price.innerHTML = `$ ` + (parseInt(count_num[0].value) * 65 + parseInt(count_num[1].value) * 20 + parseInt(count_num[2].value) * 33)
+                // total_price.innerHTML = `$ ` + (parseInt(count_num[0].value) * 65 + parseInt(count_num[1].value) * 20 + parseInt(count_num[2].value) * 33)
 
                 //總計
                 total_all.innerHTML = `$ ` + (parseInt(count_num[0].value) * 65 + parseInt(count_num[1].value) * 20 + parseInt(count_num[2].value) * 33 + 60)
@@ -351,12 +373,15 @@
                 price.innerHTML = `$ ` + parseInt(num.value) * parseInt(price.dataset.price)
             }
 
+            //數量
             for (let index = 0; index < count_num.length; index++) {
-                //數量
-                total_num.innerHTML = parseInt(count_num[0].value) + parseInt(count_num[1].value) + parseInt(count_num[2].value)
+                count_num[index].addEventListener('click', update())
+            }
 
+            for (let index = 0; index < count_num.length; index++) {
+                
                 //小計
-                total_price.innerHTML = `$ ` + (parseInt(count_num[0].value) * 65 + parseInt(count_num[1].value) * 20 + parseInt(count_num[2].value) * 33)
+                // total_price.innerHTML = `$ ` + (parseInt(count_num[0].value) * 65 + parseInt(count_num[1].value) * 20 + parseInt(count_num[2].value) * 33)
 
                 //總計
                 total_all.innerHTML = `$ ` + (parseInt(count_num[0].value) * 65 + parseInt(count_num[1].value) * 20 + parseInt(count_num[2].value) * 33 + 60)
@@ -373,12 +398,15 @@
                 num.value = 1
             }
 
+            //數量
             for (let index = 0; index < count_num.length; index++) {
-                //數量
-                total_num.innerHTML = parseInt(count_num[0].value) + parseInt(count_num[1].value) + parseInt(count_num[2].value)
+                count_num[index].addEventListener('click', update())
+            }
+
+            for (let index = 0; index < count_num.length; index++) {
 
                 //小計
-                total_price.innerHTML = `$ ` + (parseInt(count_num[0].value) * 65 + parseInt(count_num[1].value) * 20 + parseInt(count_num[2].value) * 33)
+                // total_price.innerHTML = `$ ` + (parseInt(count_num[0].value) * 65 + parseInt(count_num[1].value) * 20 + parseInt(count_num[2].value) * 33)
 
                 //總計
                 total_all.innerHTML = `$ ` + (parseInt(count_num[0].value) * 65 + parseInt(count_num[1].value) * 20 + parseInt(count_num[2].value) * 33 + 60)
