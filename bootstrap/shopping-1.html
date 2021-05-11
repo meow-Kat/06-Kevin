@@ -99,13 +99,16 @@
                                 <div class="col d-flex justify-content-end">
                                     <div class="my-order d-flex align-items-center">
                                         <div class="my-order-num">
-                                            <span class="remove">-</span>
-                                            <input id="Str" class="num-count" type="text" min="1" value="1" oninput="if(value>50)value=50" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'0')}else{this.value=this.value.replace(/\D/g,'')}" onchange="ShowStr(this.id)">
-                                            <span class="add">+</span>
+                                            <span class="remove" onclick="remove(this)">-</span>
+                                            <input id="product-1" class="count-num" type="text" min="1" value="1"
+                                                onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"
+                                                onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'0')}else{this.value=this.value.replace(/\D/g,'')}"
+                                                onchange="change(this)">
+                                            <span class="add" onclick="add(this)">+</span>
                                         </div>
-                                        <p class="my-order-price px-4">$999</p>
+                                        <p class="my-order-price px-4" data-price="65">$ 65</p>
                                     </div>
-                                    
+
                                 </div>
                             </div>
 
@@ -115,20 +118,24 @@
                                 <div class="col d-flex align-items-center">
                                     <div class="pic-1"></div>
                                     <div class="text px-3">
-                                        <P>耿鬼</P>
+                                        <P>貓貓</P>
                                         <span class="text-color-grey">#aaaa</span>
                                     </div>
                                 </div>
                                 <div class="col d-flex justify-content-end">
                                     <div class="my-order d-flex align-items-center">
                                         <div class="my-order-num">
-                                            <span class="remove">-</span>
-                                            <input id="Str" class="num-count" type="text" min="1" value="1" oninput="if(value>50)value=50" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'0')}else{this.value=this.value.replace(/\D/g,'')}" onchange="ShowStr(this.id)">
-                                            <span class="add">+</span>
+                                            <span class="remove" onclick="remove(this)">-</span>
+                                            <input id="product-2" class="count-num" type="text" min="1" value="1"
+                                                oninput="add(this)"
+                                                onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"
+                                                onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'0')}else{this.value=this.value.replace(/\D/g,'')}"
+                                                onchange="change(this)">
+                                            <span class="add" onclick="add(this)">+</span>
                                         </div>
-                                        <p class="my-order-price px-4">$999</p>
+                                        <p class="my-order-price px-4" data-price="20">$ 20</p>
                                     </div>
-                                    
+
                                 </div>
                             </div>
 
@@ -138,20 +145,23 @@
                                 <div class="col d-flex align-items-center">
                                     <div class="pic-1"></div>
                                     <div class="text px-3">
-                                        <P>耿鬼</P>
+                                        <P>狗勾</P>
                                         <span class="text-color-grey">#aaaa</span>
                                     </div>
                                 </div>
                                 <div class="col d-flex justify-content-end">
                                     <div class="my-order d-flex align-items-center">
                                         <div class="my-order-num">
-                                            <span class="remove">-</span>
-                                            <input id="Str" class="num-count" type="text" min="1" value="1" oninput="if(value>50)value=50" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'0')}else{this.value=this.value.replace(/\D/g,'')}" onchange="ShowStr(this.id)">
-                                            <span class="add">+</span>
+                                            <span class="remove" onclick="remove(this)">-</span>
+                                            <input id="product-3" class="count-num" type="text" min="1" value="1"
+                                                onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"
+                                                onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'0')}else{this.value=this.value.replace(/\D/g,'')}"
+                                                onchange="change(this)">
+                                            <span class="add" onclick="add(this)">+</span>
                                         </div>
-                                        <p class="my-order-price px-4">$999</p>
+                                        <p class="my-order-price px-4" data-price="33">$ 33</p>
                                     </div>
-                                    
+
                                 </div>
                             </div>
 
@@ -161,22 +171,22 @@
                     </div>
                     <!-- 計算 -->
                     <div class="row py-3">
-                        <div class="col-3 ml-auto">
+                        <div class="col-5 col-md-3 ml-auto">
                             <div class="totle d-flex justify-content-between">
-                                <h5 class="color-grey">數量：</h5>
-                                <h5>3</h5>
+                                <h5 class="color-grey ">數量：</h5>
+                                <h5 class="total-num">4</h5>
                             </div>
                             <div class="totle d-flex justify-content-between">
                                 <h5 class="color-grey">小計：</h5>
-                                <h5>$3800</h5>
+                                <h5 class="total-price">$3800</h5>
                             </div>
                             <div class="totle d-flex justify-content-between">
                                 <h5 class="color-grey">運費：</h5>
-                                <h5>$60</h5>
+                                <h5>$ 60</h5>
                             </div>
                             <div class="totle d-flex justify-content-between">
                                 <h5 class="color-grey">總計：</h5>
-                                <h5>$99999</h5>
+                                <h5 class="total-all">$99999</h5>
                             </div>
                         </div>
                     </div>
@@ -189,9 +199,12 @@
                         <div class="col d-flex justify-content-between align-items-center">
                             <span class="d-flex align-items-center">
                                 <i class="fas fa-caret-left"></i>
-                                <a href="./index.html"><p class="card-text my-back px-3">返回購物</p></a>
+                                <a href="./index.html">
+                                    <p class="card-text my-back px-3">返回購物</p>
+                                </a>
                             </span>
-                            <a href="./shopping-2.html"><button type="button" class="btn btn-primary btn-lg my-button">下一步</button></a>
+                            <a href="./shopping-2.html"><button type="button"
+                                    class="btn btn-primary btn-lg my-button">下一步</button></a>
                         </div>
                     </div>
                 </div>
@@ -206,7 +219,8 @@
                 <div class="col d-block d-md-flex flex-wrap align-items-center">
                     <div class="col-12 col-md-3 text-center text-md-left">
                         <div class="col-6 col-md-12 m-auto p-0">
-                            <div class="logo-footers d-flex mb-2 text-center justify-content-center justify-content-md-start">
+                            <div
+                                class="logo-footers d-flex mb-2 text-center justify-content-center justify-content-md-start">
                                 <div class="logo-footer-pic">
                                     <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg"
                                         viewBox="0 0 40 40">
@@ -280,46 +294,126 @@
                 </div>
             </div>
 
-<script>
-
-    // STEP 1: 透過 querySelector 選擇到 HTML 中的「箭頭」元素
-    const upElement = document.querySelector(".add");
-    const downElement = document.querySelector(".remove");
-
-    // STEP 2: 透過 querySelector 選擇到 HTML 中的「數字」元素
-    const numberElement = document.querySelector(".num-count");
-    const currentNumber = Number(numberElement.value);
-    
-
-
-    //明天要把陣列放進去
-    for (let index = 0; index < array.length; index++) {
-        const element = array[index];
-        
-    }
-    // STEP 3: 監聽 click 事件，並執行對應的行為
-    upElement.addEventListener("click", e => {
-        // STEP 4: 取得當前網頁上的數字
-        const currentNumber = Number(numberElement.value);
-
-        // 取得數字變化
-
-        // STEP 5: 將數字增加後帶回網頁上 textContent
-        numberElement.value = currentNumber + 1;
-    
-    });
-
-    downElement.addEventListener("click", e => {
-    const currentNumber = Number(numberElement.value);
-    numberElement.value = currentNumber - 1;
-    if ( numberElement.value < 1 ) {
-        numberElement.value = currentNumber ;
-    }
-    
-    });
+            <div class="row">
+                <div class="col-12 col-sm-6 text-center text-sm-left">
+                    <p>© 2020 Tailblocks — @knyttneve</p>
+                </div>
+                <div class="col-12 col-sm-6 text-center text-sm-right">
+                    <i class="fab fa-facebook-f mx-2"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram mx-2"></i>
+                    <i class="fab fa-invision"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 
-</script>
+    <script>
+
+        let count_num = document.querySelectorAll('.count-num')
+        let total_num = document.querySelector('.total-num')
+        let total_price = document.querySelector('.total-price')
+        let total_all = document.querySelector('.total-all')
+
+
+
+
+
+        //+ - 按鈕
+        function add(ele) {
+            let num = ele.parentNode.children[1]
+            let price = ele.parentNode.parentNode.children[1]
+            num.value = parseInt(num.value) + 1
+            price.innerHTML = `$ ` + parseInt(num.value) * parseInt(price.dataset.price)
+
+            for (let index = 0; index < count_num.length; index++) {
+                //數量
+                total_num.innerHTML = parseInt(count_num[0].value) + parseInt(count_num[1].value) + parseInt(count_num[2].value)
+
+                //小計
+                total_price.innerHTML = `$ ` + (parseInt(count_num[0].value) * 65 + parseInt(count_num[1].value) * 20 + parseInt(count_num[2].value) * 33)
+
+                //總計
+                total_all.innerHTML = `$ ` + (parseInt(count_num[0].value) * 65 + parseInt(count_num[1].value) * 20 + parseInt(count_num[2].value) * 33 + 60)
+
+            }
+        }
+
+        function remove(ele) {
+            let num = ele.parentNode.children[1]
+            let price = ele.parentNode.parentNode.children[1]
+            num.value = parseInt(num.value) - 1
+            //最小不能小於1
+            if (num.value < 1) {
+                num.value = 1
+            } else {
+                price.innerHTML = `$ ` + parseInt(num.value) * parseInt(price.dataset.price)
+            }
+
+            for (let index = 0; index < count_num.length; index++) {
+                //數量
+                total_num.innerHTML = parseInt(count_num[0].value) + parseInt(count_num[1].value) + parseInt(count_num[2].value)
+
+                //小計
+                total_price.innerHTML = `$ ` + (parseInt(count_num[0].value) * 65 + parseInt(count_num[1].value) * 20 + parseInt(count_num[2].value) * 33)
+
+                //總計
+                total_all.innerHTML = `$ ` + (parseInt(count_num[0].value) * 65 + parseInt(count_num[1].value) * 20 + parseInt(count_num[2].value) * 33 + 60)
+
+            }
+        }
+
+        function change(ele) {
+            let num = ele.parentNode.children[1]
+            let price = ele.parentNode.parentNode.children[1]
+            if (num.value > 1) {
+                price.innerHTML = `$ ` + parseInt(num.value) * parseInt(price.dataset.price)
+            } else {
+                num.value = 1
+            }
+
+            for (let index = 0; index < count_num.length; index++) {
+                //數量
+                total_num.innerHTML = parseInt(count_num[0].value) + parseInt(count_num[1].value) + parseInt(count_num[2].value)
+
+                //小計
+                total_price.innerHTML = `$ ` + (parseInt(count_num[0].value) * 65 + parseInt(count_num[1].value) * 20 + parseInt(count_num[2].value) * 33)
+
+                //總計
+                total_all.innerHTML = `$ ` + (parseInt(count_num[0].value) * 65 + parseInt(count_num[1].value) * 20 + parseInt(count_num[2].value) * 33 + 60)
+
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
 
 
 
