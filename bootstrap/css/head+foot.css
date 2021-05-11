@@ -25,9 +25,10 @@ p,h5 {
 }
 
 .login-option{
-    width: 98vw;
-    top: 0;
-    left: -204px;
+    position: absolute;
+    bottom: -49px;
+    left: -50%;
+    z-index: 4;
 }
 
 .my-link-ctrl{
@@ -66,14 +67,15 @@ p,h5 {
         height: 60px;
     }
 
-    .login-option{
-        width: 86%;
-    }
+    
 }
 
 @media(min-width:992px){
     .nav-window{
         padding: 0 24px;
+    }
+    .login-option{
+        position: unset;
     }
 }
 
