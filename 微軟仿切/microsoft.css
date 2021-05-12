@@ -419,10 +419,24 @@
             background-color: black !important;
         }
 
+        .pause{
+            display: flex;
+            align-items: center;
+        }
+
         .pause-btn{
-            width: max-content;
-            padding: 25px;
-            background-color: chartreuse;
+            width: 33px;
+            height: 33px;
+            padding: 0px;
+            border: 1px solid transparent;
+            text-align: center;
+            line-height: 33px;
+            margin-right: 5px;
+        }
+
+        .pause-btn:hover{
+            background-color: black;
+            color: whitesmoke;
         }
 
         .auto-box{

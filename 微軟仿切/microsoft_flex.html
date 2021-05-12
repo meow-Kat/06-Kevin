@@ -199,11 +199,11 @@
                         <div class="swiper-button-next btn"></div>
                         <div class="swiper-button-prev btn"></div>
                     </div>
-                    <div class="swiper-pagination"></div>
-                    <div class="pause">
-                        <div class="pause-btn">ll</div>
-                        <span class="pause-text"></span>
-                    </div>
+                    <div class="swiper-pagination" style="bottom: 8%; left: -5%;"></div>
+                    <span class="pause">
+                        <div class="pause-btn" onclick = swiper.autoplay.stop()>ll</div>
+                        <span class="pause-text">暫停投影片</span>
+                    </span>
                 </div>
 
 
@@ -657,23 +657,31 @@
         }
 
         //暫停紐
-        var pause = document.querySelector('.pause')
-        var pause_btn = document.querySelector('.pause-btn')
-        var pause_text = document.querySelector('.pause-text')
 
-        pause_btn.onclick = function () {
-            if (pause_btn.innerHTML == `ll`) {
-                pause_btn.innerHTML = `▷`
-                pause_text.innerHTML = `播放投影片`
-            } else {
-                pause_btn.innerHTML = `ll`
-                pause_text.innerHTML = `暫停投影片`
-            }
-        }
 
     </script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
+        var pause = document.querySelector('.pause')
+        var pause_btn = document.querySelector('.pause-btn')
+        var pause_text = document.querySelector('.pause-text')
+        
+        var x = 0
+        pause.onclick = function () {
+            if (x == 0) {
+                pause.innerHTML = `<div class="pause-btn" onclick = swiper.autoplay.start()>▷</div>
+                                    <span class="pause-text">播放投影片</span>`
+                x++
+            } else {
+                pause.innerHTML = `<div class="pause-btn" onclick = swiper.autoplay.stop()>ll</div>
+                                    <span class="pause-text">暫停投影片</span>`
+                x = 0           
+            }
+        }
+
+        
+        
+
         var swiper = new Swiper(".mySwiper", {
             slidesPerView: 1,
             spaceBetween: 30,
@@ -689,10 +697,14 @@
             autoplay: {
                 delay: 5000,
             },
-        });
+        }
+        
+        
+        );
+
+        
 
         // var homeSwiper = new Swiper('.home_top_swiper', {
-
 
         //     $(".swiper-button-pause").click(function () {
         //         homeSwiper.autoplay.stop();
