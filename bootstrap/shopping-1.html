@@ -317,11 +317,22 @@
         let total_price = document.querySelector('.total-price')
         let total_all = document.querySelector('.total-all')
 
+
+        //宣告單價取含有$的價格
         let price_base = document.querySelectorAll('.my-order-price')
+        //宣告裝處理後字串的陣列
+        let change_num =[]
+        //修改文字後存進去
+        for (let index = 0; index < price_base.length; index++) {
+            change_num[index] = price_base[index].innerHTML.substring(2,price_base[index].length)
+        }
+
+        
 
         function update() {
             let sum_count = 0
             let sum_calc = 0
+            let total_sum_calc
             //算總數
             for (let i = 0; i < count_num.length; i++) {
                 sum_count += parseInt(count_num[i].value)
@@ -330,11 +341,15 @@
 
             //算小記
             for (let i = 0; i < count_num.length; i++) {
-                sum_calc = parseInt(count_num[i].value) * parseInt(price.dataset.price)
+                sum_calc += parseInt(count_num[i].value) * parseInt(change_num[i])
             }
-            
             total_price.innerHTML = `$ ` + sum_calc
-            
+
+            //總計
+            total_sum_calc = sum_calc + 60
+            console.log(total_sum_calc);
+
+            total_all.innerHTML = `$ ` + total_sum_calc
         }
 
 
@@ -347,19 +362,11 @@
             price.innerHTML = `$ ` + parseInt(num.value) * parseInt(price.dataset.price)
 
             for (let index = 0; index < count_num.length; index++) {
-                //數量
-                count_num[index].addEventListener('click', update())
                 
-            }
-
-            for (let index = 0; index < count_num.length; index++) {
-                //小計
-                // total_price.innerHTML = `$ ` + (parseInt(count_num[0].value) * 65 + parseInt(count_num[1].value) * 20 + parseInt(count_num[2].value) * 33)
-
-                //總計
-                total_all.innerHTML = `$ ` + (parseInt(count_num[0].value) * 65 + parseInt(count_num[1].value) * 20 + parseInt(count_num[2].value) * 33 + 60)
+                count_num[index].addEventListener('click', update())
 
             }
+
         }
 
         function remove(ele) {
@@ -373,20 +380,11 @@
                 price.innerHTML = `$ ` + parseInt(num.value) * parseInt(price.dataset.price)
             }
 
-            //數量
+            
             for (let index = 0; index < count_num.length; index++) {
                 count_num[index].addEventListener('click', update())
             }
 
-            for (let index = 0; index < count_num.length; index++) {
-                
-                //小計
-                // total_price.innerHTML = `$ ` + (parseInt(count_num[0].value) * 65 + parseInt(count_num[1].value) * 20 + parseInt(count_num[2].value) * 33)
-
-                //總計
-                total_all.innerHTML = `$ ` + (parseInt(count_num[0].value) * 65 + parseInt(count_num[1].value) * 20 + parseInt(count_num[2].value) * 33 + 60)
-
-            }
         }
 
         function change(ele) {
@@ -398,20 +396,11 @@
                 num.value = 1
             }
 
-            //數量
+            
             for (let index = 0; index < count_num.length; index++) {
                 count_num[index].addEventListener('click', update())
             }
 
-            for (let index = 0; index < count_num.length; index++) {
-
-                //小計
-                // total_price.innerHTML = `$ ` + (parseInt(count_num[0].value) * 65 + parseInt(count_num[1].value) * 20 + parseInt(count_num[2].value) * 33)
-
-                //總計
-                total_all.innerHTML = `$ ` + (parseInt(count_num[0].value) * 65 + parseInt(count_num[1].value) * 20 + parseInt(count_num[2].value) * 33 + 60)
-
-            }
         }
 
 
