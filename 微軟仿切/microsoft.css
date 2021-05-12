@@ -374,12 +374,6 @@
             left: 1px !important;
         }
 
-
-
-        picture:hover + .btns{
-            display: block;
-        }
-
         .banner .btns:hover {
             display: block;
         }
@@ -419,24 +413,40 @@
             background-color: black !important;
         }
 
+        .my-dot{
+            bottom: 80px !important;
+            left: -50px !important;
+        }
+
         .pause{
+            width: max-content;
             display: flex;
             align-items: center;
+            
         }
 
         .pause-btn{
             width: 33px;
             height: 33px;
-            padding: 0px;
             border: 1px solid transparent;
             text-align: center;
             line-height: 33px;
             margin-right: 5px;
+            bottom: !important;
         }
 
         .pause-btn:hover{
             background-color: black;
             color: whitesmoke;
+        }
+
+        .pause-text{
+            display: none;
+            border: 1px solid black;
+        }
+
+        .pause-btn:hover + .pause-text{
+            display: block;
         }
 
         .auto-box{
