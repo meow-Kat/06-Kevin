@@ -419,6 +419,12 @@
             background-color: black !important;
         }
 
+        .pause-btn{
+            width: max-content;
+            padding: 25px;
+            background-color: chartreuse;
+        }
+
         .auto-box{
             width: 34px;
             height: 34px;

@@ -201,7 +201,7 @@
                     </div>
                     <div class="swiper-pagination"></div>
                     <div class="pause">
-                        <div class="pause-btn"></div>
+                        <div class="pause-btn">ll</div>
                         <span class="pause-text"></span>
                     </div>
                 </div>
@@ -214,8 +214,6 @@
 
 
                 <!-- <div class="silder-btns">
-                    <div class="dot dot1 active"></div>
-                    <div class="dot dot2"></div>
                     <div class="pause">
                         <span class="pause-btn">
                             ll
@@ -663,7 +661,7 @@
         var pause_btn = document.querySelector('.pause-btn')
         var pause_text = document.querySelector('.pause-text')
 
-        pause.onclick = function () {
+        pause_btn.onclick = function () {
             if (pause_btn.innerHTML == `ll`) {
                 pause_btn.innerHTML = `▷`
                 pause_text.innerHTML = `播放投影片`
@@ -692,6 +690,18 @@
                 delay: 5000,
             },
         });
+
+        // var homeSwiper = new Swiper('.home_top_swiper', {
+
+
+        //     $(".swiper-button-pause").click(function () {
+        //         homeSwiper.autoplay.stop();
+        //     });
+
+        //     $(".swiper-button-play").click(function () {
+        //         homeSwiper.autoplay.start();
+        //     });
+        // }
 
 
     </script>
