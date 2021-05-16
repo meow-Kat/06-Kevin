@@ -419,10 +419,15 @@
         }
 
         .pause{
+            position: absolute;
             width: max-content;
+            bottom: 100px;
             display: flex;
             align-items: center;
-            
+            z-index: 10;
+            bottom: 45px;
+            left: 52%;
+            cursor: pointer;
         }
 
         .pause-btn{
@@ -432,7 +437,6 @@
             text-align: center;
             line-height: 33px;
             margin-right: 5px;
-            bottom: !important;
         }
 
         .pause-btn:hover{
@@ -472,6 +476,10 @@
             border: 1px solid gray;
             color: black;
             display: none;
+        }
+
+        .swiper-pagination{
+            bottom: 13px !important;
         }
 
         .swiper-pagination-bullet:hover{
