@@ -116,12 +116,6 @@
     <audio data-key="76" src="./sound/01 - JavaScript Drum Kit_sounds_tink.wav"></audio>
 
     <script>
-
-        let key = document.querySelector('key')
-        let sound = document.querySelector('sound')
-
-
-
         //keydown使用者按住不放   keyup使用者按住放開後
         //addEventListener 監聽事件   window物件區域全通用可省略
         window.addEventListener('keydown', palyHandler)
@@ -143,6 +137,7 @@
         }
         //動畫結束要收回  window物件區域全通用可省略
         document.querySelectorAll('.key').forEach(function (key) {
+            //transitionend 事件在 CSS transition 结束後觸發
             key.addEventListener('transitionend', transitionendHandler)
         })
 
