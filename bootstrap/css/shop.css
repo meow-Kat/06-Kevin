@@ -118,8 +118,12 @@ input[type=number]::-webkit-inner-spin-button {
     color: darkgrey;
 }
 
+.add,.remove{
+    cursor: pointer;
+}
+
 .my-order-price{
-    width: 100px;
+    width: 150px;
     font-size: 18px;
     text-align:right
 }

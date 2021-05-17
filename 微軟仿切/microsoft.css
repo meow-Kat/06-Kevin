@@ -144,6 +144,9 @@
             display: flex;
             align-items: center;
         }
+        nav .option{
+            cursor: pointer;
+        }
 
         nav .options label{
             border-bottom: 2px solid transparent;
@@ -321,7 +324,7 @@
         .picture-textbox .buy-box {
             width: 125px;
             padding: 10px 0;
-            
+            cursor: pointer;
             background-color: black;
             color: white;
         }
@@ -542,6 +545,7 @@
             display: flex;
             justify-content: center;
             text-align: center;
+            cursor: pointer;
         }
 
         .icons .icon:hover span{
@@ -887,6 +891,7 @@
             nav .container .btnh{
                 display: flex;
                 margin-left: 1px;
+                cursor: pointer;
             }
 
             nav .link-768-hidden{
