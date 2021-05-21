@@ -120,6 +120,7 @@
         //addEventListener 監聽事件   window物件區域全通用可省略
         window.addEventListener('keydown', palyHandler)
 
+        //e 是 event 是一個事件 物件類型 **很重要**
         function palyHandler(e) {
             //paly music 抓data-key值
             const audio = document.querySelector(`audio[data-key ="${e.keyCode}"]`)
@@ -129,7 +130,7 @@
                 audio.currentTime = 0
                 audio.play()
             }
-            //dom style 抓data-key值
+            //dom style 抓data-key值 **重要**
             const dom = document.querySelector(`div[data-key = "${e.keyCode}"]`)
             //希望按到其他鍵沒反應
             if (dom) dom.classList.add('playing')

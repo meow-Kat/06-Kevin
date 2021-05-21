@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Array Cardio 💪💪</title>
+</head>
+<body>
+  <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
+  <script>
+    // ## Array Cardio Day 2
+
+    const people = [
+      { name: 'Wes', year: 1988 },
+      { name: 'Kait', year: 1986 },
+      { name: 'Irv', year: 1970 },
+      { name: 'Lux', year: 2015 }
+    ];
+
+    const comments = [
+      { text: 'Love this!', id: 523423 },
+      { text: 'Super good', id: 823423 },
+      { text: 'You are the best', id: 2039842 },
+      { text: 'Ramen is my fav food ever', id: 123523 },
+      { text: 'Nice Nice Nice!', id: 542328 }
+    ];
+
+    // Some and Every Checks
+    // .some()只要其中一個符合條件就OK
+    // Array.prototype.some() // is at least one person 19 or older?
+    // 箭頭後面預設就會 return 但加了大括號就需要自行回傳了
+    const ans = people.some(p => {
+      return new Date().getUTCFullYear() - p.year >= 19
+    })
+    console.log(ans);
+    
+    // .every()需要全部符合條件才OK
+    // Array.prototype.every() // is everyone 19 or older?
+    const ans1 = people.every(p => {
+      return new Date().getUTCFullYear() - p.year >= 19
+    })
+    console.log(ans1);
+    
+    // .find()從陣列找東西出來找本體出來,但是找到一筆就停止，比較兩個陣列也可以使用
+    // Array.prototype.find()
+    // Find is like filter, but instead returns just the one you are looking for
+    // find the comment with the ID of 823423
+    const ans2 = comments.find(comment => comment.id == 823423)
+    console.log(ans2);
+
+    // .findIndex()從陣列找東西出來找本體的排序出來,也是找到一筆就停，找多筆要filrer或foreach
+    // Array.prototype.findIndex()
+    // Find the comment with this ID
+
+    const ans3 = comments.findIndex(comment => comment.id == 823423)
+    console.log(ans3);
+
+    // delete the comment with the ID of 823423
+    // .splice()可以把東西刪除也可以加東西進去,會直接操作
+    //             index↓    ↓刪除幾個  xxx是要加什麼東西進去
+    // comments.splice(ans3, 1 , xxx)
+    const ans4 = comments.splice(ans3, 1)
+    console.log( ans4 , comments);
+
+    // .slice(第幾筆資料, 到第幾筆)複製陣列特定位置
+    const ans5 = comments.slice(0,ans3)
+    const ans6 = comments.slice(ans3+1)
+
+    // 組合         ↓解構   ↓解構 
+    const ans7 = [...ans5,...ans6]
+    console.log(ans7);
+
+    // 簡單複製94轉josn再轉回來
+
+    // 額外  更新id 3 數量變 5
+    let cart = [
+      {id:1 , count:1},
+      {id:2 , count:1},
+      {id:3 , count:1},
+      {id:4 , count:1},
+      {id:5 , count:1}
+    ]
+    const item = cart.find(item =>{
+      console.log(item.id);
+      return item.id == 3
+    })
+    item.count = 5
+    console.log(cart);
+
+    let newCart = [...cart]
+    newCart[0].count = 5
+    console.log(newCart[0],cart[0]);
+
+  </script>
+</body>
+</html>

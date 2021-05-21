@@ -428,7 +428,7 @@
             display: flex;
             align-items: center;
             z-index: 10;
-            bottom: 45px;
+            bottom: 7px;
             left: 52%;
             cursor: pointer;
         }
@@ -507,7 +507,7 @@
             width: 100%;
             display: flex;
             justify-content: center;
-            padding: 17px 0 0px;
+            padding: 48px 0 0px;
         }
 
         .icon {
@@ -633,10 +633,6 @@
         .product-card .buy-box:hover .buy-icon{
             padding-left: 8px;
             transition: 0.5s;
-        }
-
-        .banner {
-            padding-bottom: 40px;
         }
 
         .focous {

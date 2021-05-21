@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Canvas</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+    }
+
+    canvas {
+      border: 1px solid;
+    }
+  </style>
+
+</head>
+
+<body>
+  <canvas id="draw" width="800" height="800"></canvas>
+  <script>
+
+    // 會使用到canvas.Context('')→有很多選項找一下MDN
+    // 配合 Sytax → 指定線條顏色
+    // 邊角粗細 .lineWidth
+    // 收尾的點 .lineCap = 'butt' || 'round' || 'square'
+    // 轉折角 .lineJoin = 'bevel' || 'round' || 'miter'
+    {
+      let canvas = document.querySelector('#draw')
+      let ctx = canvas.getContext('2d')
+      //擴展 canvas 的範圍 不被html限制
+      canvas.width = window.innerWidth
+      canvas.height = window.innerHeight
+      ctx.strokeStyle = "hsl(0,100%,50%)"
+      //                 顏色 飽和度 明暗
+      ctx.lineWidth = 100
+      ctx.lineCap = 'round'
+      ctx.lineJoin = 'round'
+
+      let drawing = false
+      //按下去把點記住
+      let lastX = 0
+      let lastY = 0
+
+      function draw(e) {
+        if(!drawing) return;
+        console.log(e);
+        // 告訴程式開始畫
+        ctx.beginPath()
+        // 把點連到開始的位置上
+        ctx.moveTo(lastX, lastY);
+      }
+      // function draw 會記錄x和y
+      canvas.addEventListener('mousemove', draw )
+      //當mousedown的時候會drawing
+      canvas.addEventListener('mousedown', () => drawing = true)
+      canvas.addEventListener('mouseup', () => drawing = false)
+      canvas.addEventListener('mouseout', () => drawing = false)
+
+
+      // canvas.addEventListener('mousedown', e => {
+      //   drawing = true
+      //   //設定XY座標
+      //   [lastX, lastY] = [e.offsetX, e.offsetY]
+      // })
+      // canvas.addEventListener('mousemove', e => {
+      //   if(!drawing) return;
+      //   console.log('draw');
+      //   
+      //   
+
+      //   ctx.lineTo(e.offsetX,e.offsetY)
+        
+      //   // 畫
+      //   ctx.stroke()
+      //   [lastX, lastY] = [e.offsetX, e.offsetY]
+      // })
+      // canvas.addEventListener('mouseup', () => {
+      //   drawing = false
+
+      // })
+      // // dom會連續觸發
+      // // canvas.addEventListener('mouseout', ()=>{ // })
+      // canvas.addEventListener('mouseleave', () => {
+      //   drawing = false
+
+      // })
+    }
+  </script>
+
+
+
+</body>
+
+</html>

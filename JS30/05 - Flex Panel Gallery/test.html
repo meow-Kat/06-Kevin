@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            width: 60px;
+            /* height: 40px; */
+        }
+
+        .a {
+            margin: 15px;
+            /* background-color: firebrick; */
+            transition: 5s;
+        }
+
+        .content {
+            background-color: fuchsia;
+            height: 0px;
+            opacity: 0;
+            display: none;
+            transform: translateY(-100%);
+        }
+ .active {
+            height: max-content;
+            opacity: 1;
+            display: block;
+            transform: translateY(0%);
+            transition: 5s;
+            animation: 5s;
+
+            
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="a">
+        <button>a</button>
+        <div class="content">
+            <div class="text">aaaa</div>
+            <div class="text">aaa</div>
+        </div>
+    </div>
+    <div class="a">
+        <button>b</button>
+        <div class="content ">
+            <div class="text">bbb</div>
+            <div class="text">bbb</div>
+        </div>
+    </div>
+    <script>
+        let a = document.querySelectorAll('.a button')
+        let content = document.querySelectorAll('.content')
+
+
+        a.forEach((ele, index) => {
+            ele.addEventListener('click', d_block)
+            function d_block() {
+                content[index].classList.toggle('active')
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>

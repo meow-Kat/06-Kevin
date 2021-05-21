@@ -182,8 +182,8 @@
                                 <h5 class="total-price">$ 118</h5>
                             </div>
                             <div class="totle d-flex justify-content-between">
-                                <h5 class="color-grey">運費：</h5>
-                                <h5>$ 60</h5>
+                                <h5 class="color-grey ">運費：</h5>
+                                <h5 class="shipment">$ 60</h5>
                             </div>
                             <div class="totle d-flex justify-content-between">
                                 <h5 class="color-grey">總計：</h5>
@@ -316,6 +316,7 @@
         let total_num = document.querySelector('.total-num')
         let total_price = document.querySelector('.total-price')
         let total_all = document.querySelector('.total-all')
+        let shipment = document.querySelector('.shipment')
 
 
         //宣告單價取含有$的價格
@@ -333,6 +334,8 @@
             let sum_count = 0
             let sum_calc = 0
             let total_sum_calc
+            let shipment_calc
+             
             //算總數
             for (let i = 0; i < count_num.length; i++) {
                 sum_count += parseInt(count_num[i].value)
@@ -345,8 +348,16 @@
             }
             total_price.innerHTML = `$ ` + sum_calc
 
+            //運費
+            shipment_calc = 60
+            if (sum_calc >= 1000) {
+                shipment_calc = 0
+            }
+            shipment.innerHTML = `$ ` +  shipment_calc
+            console.log(shipment);
+
             //總計
-            total_sum_calc = sum_calc + 60
+            total_sum_calc = sum_calc + parseInt(shipment_calc)
             console.log(total_sum_calc);
 
             total_all.innerHTML = `$ ` + total_sum_calc
