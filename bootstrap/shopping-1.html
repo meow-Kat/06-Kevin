@@ -373,11 +373,8 @@
             price.innerHTML = `$ ` + parseInt(num.value) * parseInt(price.dataset.price)
 
             for (let index = 0; index < count_num.length; index++) {
-                
                 count_num[index].addEventListener('click', update())
-
             }
-
         }
 
         function remove(ele) {
