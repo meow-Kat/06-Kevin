@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Key Detection</title>
+  <script type="text/javascript" src="https://www.cornify.com/js/cornify.js"></script>
+</head>
+
+<body>
+  <script>
+    {
+      const secreCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]
+      const input = []
+      document.addEventListener('keyup', function (e) {
+        console.log(e.key, e.keyCode);
+        // 當輸入值超過密碼時
+        while (input.length > secreCode.length) {
+          // .shift 是把前面的東西移除
+          input.shift(e.keyCode)
+        }
+        // .splice 把陣列東西移除
+        input.splice(
+          //負secreCode的數開始往後切，因為INDEX第一個是0 所以再-1
+          -secreCode.length - 1,
+          // 切幾個數量 , 而且只要是負的不會有東西切出來
+          input.length - secreCode.length
+        ) // 這樣後面的東西進來之後會把input陣列第一個位數擠出去
+
+
+        input.push(e.keyCode)
+        // 比對兩個陣列一樣
+        if (input.join('') === secreCode.join('')) {
+          // 密碼對了就印出來
+          console.log('aa');
+        }
+      })
+    }
+  </script>
+</body>
+
+</html>

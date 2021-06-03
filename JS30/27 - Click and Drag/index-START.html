@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Click and Drag</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="items">
+    <div class="item item1">01</div>
+    <div class="item item2">02</div>
+    <div class="item item3">03</div>
+    <div class="item item4">04</div>
+    <div class="item item5">05</div>
+    <div class="item item6">06</div>
+    <div class="item item7">07</div>
+    <div class="item item8">08</div>
+    <div class="item item9">09</div>
+    <div class="item item10">10</div>
+    <div class="item item11">11</div>
+    <div class="item item12">12</div>
+    <div class="item item13">13</div>
+    <div class="item item14">14</div>
+    <div class="item item15">15</div>
+    <div class="item item16">16</div>
+    <div class="item item17">17</div>
+    <div class="item item18">18</div>
+    <div class="item item19">19</div>
+    <div class="item item20">20</div>
+    <div class="item item21">21</div>
+    <div class="item item22">22</div>
+    <div class="item item23">23</div>
+    <div class="item item24">24</div>
+    <div class="item item25">25</div>
+  </div>
+
+  <script>
+    // 拖曳 開始:mousedown  正在:mousemove  結束:moseup & mouseleave
+    // 按下去變大 class會增加active
+    let list = document.querySelector('.items')
+    // 要先記錄當前座標
+    let startX = 0
+
+    // 第二種方式
+    let srartScroll = 0
+
+    // 輪播
+    let startTime = 0
+
+    function startDrag(e) {
+      list.classList.add('active')
+      // 用pageXY 或 ClientXY 為整頁座標  offsetXY 取區域座標
+      // console.log(e);
+      startX = e.pageX
+
+      // 第二種
+      // srartScroll = list.scrollLeft
+
+      // 輪撥 手勢 0.75秒~0.5秒比較合適
+      startTime = new Date().getTime()
+    }
+    // 動的時候做相減
+    function dragHamdler(e) {
+      // .contains 有包含
+      if (list.classList.contains('active')) {
+        let move = e.pageX - startX
+        startX = e.pageX // 算完依次往前推
+        list.scrollLeft -= move * 2 // 做移動
+        //        改變會變得比較快 ↑
+
+        //第二種
+        // list.scrollLeft = srartScroll - move *2
+      }
+    }
+    function stoptDrag(e) {
+      list.classList.remove('active')
+      // 輪撥 手勢                           毫秒↓
+      if (new Date().getTime() - startTime <= 500) {
+        if (e.pageX > startX) {
+          console.log('right');
+        } else {
+          console.log('left');
+        }
+      }
+    }
+    // 手機用 
+    list.addEventListener('mousedown', startDrag)  // touchsrart
+    list.addEventListener('mousemove', dragHamdler)// touchmove
+    list.addEventListener('mouseup', stoptDrag)    // touchend
+    list.addEventListener('mouseleave', stoptDrag)
+
+  </script>
+
+</body>
+
+</html>

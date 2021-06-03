@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Understanding JavaScript's Capture</title>
+  <style>
+    html {
+      box-sizing: border-box;
+    }
+    
+    *, *:before, *:after { 
+      box-sizing: inherit; 
+    }
+  
+    div {
+      width: 100%;
+      padding: 100px;
+    }
+  
+    .one {
+      background: thistle;
+    }
+  
+    .two {
+      background: mistyrose;
+    }
+  
+    .three {
+      background: coral;
+    }
+  </style>
+</head>
+<body class="bod">
+
+  <div class="one">
+    <div class="two">
+      <div class="three">
+      </div>
+    </div>
+  </div>
+  <!-- 可以快速操作 -->
+  <!-- ul>li*3>a[herf="javascript:;"]{Button$} -->
+  <ul>
+    <li><a href="" herf="#">Button1</a></li>
+    <li><a href="" herf="#;">Button2</a></li>
+    <li><a href="" herf="#;">Button3</a></li>
+  </ul>
+<button>a</button>
+<script>
+// addEventListener('事件', 函式, )設定(true/false 捕獲模式)
+  document.querySelector('button').addEventListener('click' , function () {
+    console.log(this);
+  //  once 只做一次 預設兩個都false capture從外面到裡面 bubbilng內到外
+  },{capture:false, once:false}
+  )
+
+  let divs = document.querySelectorAll('div')
+  divs.forEach(dom =>{
+    dom.addEventListener('click', divHandler,{capture:false}) // capture:false 就是bubbilng 更改按看看
+  })
+  function  divHandler(e) {
+    e.stopPropagation() // 會中斷事件
+    console.log(e.path);
+    console.log(this.className);
+  }
+  // 補充
+  let as = document.querySelectorAll('a')
+  as.forEach(dom => {
+    dom.addEventListener('click', aHandler,{capture:false, passive:false})  // passive:true 會不能阻擋dom
+  })
+  function aHandler(e) {
+    e.preventDefault() // 去除原本dom功能 連結被擋掉
+    console.log('a click',this);
+  }
+  // 一般做事件綁定 畫面被新增的東西沒有被綁 需要事件委派(動態)
+  // 事件委派 觸發到ul裡面 滑鼠跟鍵盤事件都適合這個 連續觸發或焦點不適合
+  let ul = document.querySelector('ul')
+  ul.addEventListener('click', ulHandler)
+  function ulHandler(e){
+    // target綁最深的那個 currentTarget綁事件的那個
+    console.log('target:',e.target,'currentTarget:',e.currentTarget);
+    if (e.target.nodeName === 'A') { //node會需要大寫判斷
+    e.preventDefault() // 去除原本dom功能 連結被擋掉
+    console.log('delegat a click',e.target);
+    }
+  }
+</script>
+</body>
+</html>

@@ -23,38 +23,66 @@
 
     // 會使用到canvas.Context('')→有很多選項找一下MDN
     // 配合 Sytax → 指定線條顏色
-    // 邊角粗細 .lineWidth
-    // 收尾的點 .lineCap = 'butt' || 'round' || 'square'
-    // 轉折角 .lineJoin = 'bevel' || 'round' || 'miter'
     {
       let canvas = document.querySelector('#draw')
       let ctx = canvas.getContext('2d')
+      //控制顏色環的角度 紅→紫繞一圈
+      let colorDeg = 0
       //擴展 canvas 的範圍 不被html限制
       canvas.width = window.innerWidth
       canvas.height = window.innerHeight
-      ctx.strokeStyle = "hsl(0,100%,50%)"
-      //                 顏色 飽和度 明暗
-      ctx.lineWidth = 100
+      ctx.strokeStyle = `hsl(${colorDeg},100%,50%)`
+      //                            顏色 飽和度 明暗
+      // 邊角粗細 .lineWidth
+      ctx.lineWidth = 50
+      // 收尾的點 .lineCap = 'butt' || 'round' || 'square'
       ctx.lineCap = 'round'
+      // 轉折角 .lineJoin = 'bevel' || 'round' || 'miter'
       ctx.lineJoin = 'round'
-
+  
+      // 預設不啟用畫畫
       let drawing = false
-      //按下去把點記住
+      // 按下去把點記住
       let lastX = 0
       let lastY = 0
 
+      // 線條控制宣告
+      let direction = true
+
       function draw(e) {
-        if(!drawing) return;
+        if (!drawing) return;
         console.log(e);
         // 告訴程式開始畫
         ctx.beginPath()
-        // 把點連到開始的位置上
-        ctx.moveTo(lastX, lastY);
+        // 把點連到開始的位置上 但只會從[0,0]開始
+        ctx.moveTo(lastX, lastY)
+        ctx.lineTo(e.offsetX, e.offsetY)
+        // 畫
+        ctx.stroke()
+        // 更新[x,y]給滑鼠座標 但會跳躍畫畫
+        lastX = e.offsetX
+        lastY = e.offsetY
+        ctx.strokeStyle = `hsl(${colorDeg},100%,50%)`
+        // 設定360後 要變0
+        colorDeg = colorDeg < 360 ? colorDeg + 1 : 0
+        // 如果不在預想中的粗度
+        if (ctx.lineWidth >= 100 || ctx.lineWidth <= 1) {
+          // 把它變false
+          direction = !direction
+        }
+        //控制增減大小
+        direction ? ctx.lineWidth++ : ctx.lineWidth--
+        
+
       }
       // function draw 會記錄x和y
-      canvas.addEventListener('mousemove', draw )
+      canvas.addEventListener('mousemove', draw)
       //當mousedown的時候會drawing
-      canvas.addEventListener('mousedown', () => drawing = true)
+      canvas.addEventListener('mousedown', (e) => {
+        drawing = true
+        lastX = e.offsetX
+        lastY = e.offsetY
+      })
       canvas.addEventListener('mouseup', () => drawing = false)
       canvas.addEventListener('mouseout', () => drawing = false)
 
@@ -62,7 +90,7 @@
       // canvas.addEventListener('mousedown', e => {
       //   drawing = true
       //   //設定XY座標
-      //   [lastX, lastY] = [e.offsetX, e.offsetY]
+      //   
       // })
       // canvas.addEventListener('mousemove', e => {
       //   if(!drawing) return;
@@ -70,10 +98,9 @@
       //   
       //   
 
-      //   ctx.lineTo(e.offsetX,e.offsetY)
-        
-      //   // 畫
-      //   ctx.stroke()
+
+
+
       //   [lastX, lastY] = [e.offsetX, e.offsetY]
       // })
       // canvas.addEventListener('mouseup', () => {

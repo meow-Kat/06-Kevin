@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="product">
+            <div class="calc-number">
+                <div class="sub">-</div>
+                <input type="text" class="number" value="1">
+                <div class="add">+</div>
+            </div>
+
+            <div class="price" data-price="10.5">$ 10.5</div>
+        </div>
+
+        <div class="product">
+            <div class="calc-number">
+                <div class="sub">-</div>
+                <input type="text" class="number" value="5">
+                <div class="add">+</div>
+            </div>
+            
+            <div class="price" data-price="10.5">$ 10.5</div>
+        </div>
+
+        <div class="product">
+            <div class="calc-number">
+                <div class="sub">-</div>
+                <input type="text" class="number" value="7">
+                <div class="add">+</div>
+            </div>
+            
+            <div class="price" data-price="10.5">$ 10.5</div>
+        </div>
+
+        <div class="product">
+            <div class="calc-number">
+                <div class="sub">-</div>
+                <input type="text" class="number" value="5">
+                <div class="add">+</div>
+            </div>
+            
+            <div class="price" data-price="10.5">$ 10.5</div>
+        </div>
+
+        <div class="product">
+            <div class="calc-number">
+                <div class="sub">-</div>
+                <input type="text" class="number" value="2">
+                <div class="add">+</div>
+            </div>
+            
+            <div class="price" data-price="10.5">$ 10.5</div>
+        </div>
+
+        <div class="product">
+            <div class="calc-number">
+                <div class="sub">-</div>
+                <input type="text" class="number" value="3">
+                <div class="add">+</div>
+            </div>
+            
+            <div class="price" data-price="10.5">$ 10.5</div>
+        </div>
+
+        <div id="qty" class="qty">數量： </div>
+        <div id="subtotal" class="subtotal">小計： $ 30</div>
+        <div id="shipment" class="shipment">運費： $ 60</div>
+        <div id="total" class="total">總計： $ 90</div>
+    </div>
+
+    <script>
+        var product = document.querySelectorAll('.product');
+        var add_btn = document.querySelectorAll('.add');
+        var number_input =document.querySelectorAll('.number');
+        var price = document.querySelectorAll('.price');
+
+        var qty = document.querySelector('#qty');
+        var subtotal = document.querySelector('#subtotal');
+        var shipment = document.querySelector('#shipment');
+        var total = document.querySelector('#total');
+        
+        var product_qty = 0;
+        var product_subtotal = 0;
+        var shipment_free = 500;
+        var shipment_price = 60;
+
+        // 每當商品數量更新，就更新整個購物車的內容
+        function updateCart() {
+            product_qty = 0;
+            product_subtotal = 0;
+            // 1. 單品總價會更新
+            for (let i = 0; i < product.length; i++) {
+                let item_subtotal = number_input[i].value * price[i].dataset.price;
+                price[i].innerHTML = '單品小計： $' + item_subtotal;
+                // 更新購物車商品總數量
+                product_qty += parseInt(number_input[i].value);
+                // 更新購物商商品小計
+                product_subtotal += item_subtotal;
+            }
+            // 2. 購物車內商品總數量會更新
+            qty.innerHTML = '數量： ' + product_qty;
+            // 3. 購物車小計會更新 算法：單品價格*單品數量 加總
+            subtotal.innerHTML = '小計： $ ' + product_subtotal;
+            // 4. 運費 預設60元 小計到達一定門檻時 會歸0
+            calcShipment();
+            // 5. 總計 小計加上運費
+            total.innerHTML = '總計： $ ' + parseInt(product_subtotal + shipment_price);
+        }
+
+        number_input.forEach(e => {
+            e.addEventListener('change',updateCart)
+            console.log(e);
+        })
+
+        updateCart();
+        
+        
+
+        // 增加商品的按鈕
+        add_btn.forEach(function(ele, i) {
+            // console.log(ele, '寫forEach的時候，帶進來的第一個參數，就是被遍歷的元素');
+            ele.addEventListener('click', function() {
+                // 商品數量顯示 +1
+                number_input[i].value = parseInt(number_input[i].value) + 1;
+                updateCart();
+            });
+        });
+
+        function calcShipment() {
+            if (product_subtotal >= shipment_free) {
+                shipment_price = 0;
+                shipment.innerHTML = '運費： $ ' + shipment_price;
+            } else if (product_subtotal <= shipment_free) {
+                shipment_price = 60;
+                shipment.innerHTML = '運費： $ ' + shipment_price;
+            }
+        }
+
+    </script>
+    
+</body>
+</html>

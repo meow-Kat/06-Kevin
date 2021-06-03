@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Console Tricks!</title>
+</head>
+<body>
+
+  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+
+    function makeGreen() {
+      const p = document.querySelector('p');
+      p.style.color = '#BADA55';
+      p.style.fontSize = '50px';
+    }
+
+    let a = 'meow'
+    
+    // Regular
+    console.log(123,456);
+    // Interpolated
+    // %s 表示字串
+    console.log(`meow %s`, 'cat');
+    // Styled
+    console.log('%c cute cat','fonsize:50px');
+    // warning!
+    console.warn('meow');
+    // Error :|
+    console.error('meow');
+    // Info
+    console.info('meowwwwwwwww');
+    // Testing
+    const p = document.querySelector('p')
+    console.assert(p.classList.contains('meow mm'),'cute cat angry')
+    // clearing 都會清除上面的
+    console.clear();
+    // Viewing DOM Elements 看到所有dom
+    console.log(p);
+    console.dir(p);
+    // Grouping together  用group可以看到整個群組
+    dogs.forEach(dog =>{
+      console.group(`${dog.name}`);
+      console.log(`It is ${dog.name}`)
+      console.log(` ${dog.name} is ${dog.age*7} dog years old`)
+      console.groupEnd(`${dog.name}`)
+    })
+    // counting 可疊加計算
+    console.count('Wes');
+    console.count('Wes');
+    console.count('Wes');
+    console.count('Wes');
+    console.count('Wes');
+    console.count('Wes');
+    console.count('Wes');
+    console.count('Wes');
+    console.count('Wes');
+    // timing 看花多久時間
+    console.time('fetching data');
+    fetch('https://api.github.com/users/wesbos')
+      .then(data => data.json())
+      .then(data =>{
+        console.timeEnd('fetching data');
+        console.log(data);
+      })
+  </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .product {
+        display: flex;
+
+        .calc-number {
+            display: flex;
+            margin-right: 20px;
+
+            .add, .sub {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 30px;
+                height: 30px;
+                cursor: pointer;
+            }
+
+            .number {
+                width: 30px;
+            }
+        }
+
+        .price {
+            display: flex;
+            align-items: center;
+        }
+    }
+}
