@@ -1,20 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-    <style>
-
-
-    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 </head>
+
 <body>
-    
+
+    <div class="container">
+        <form action="/somewhere/to/upload" enctype="multipart/form-data" class="py-5">
+            <div class="row">
+                <div class="col-6">
+                    <img style="width: 450px; height: 300px;" id="preview_progressbarTW_img"
+                        src="https://dummyimage.com/600x400">
+                    <input class="py-3" type="file" onchange="readURL(this)" targetID="preview_progressbarTW_img"
+                        accept="image/gif, image/jpeg, image/png" name="product_photo">
+                </div>
+                <div class="col-6">
+                    <label for="product_classify">分類 Classify</label>
+                    <select class="form-control form-control-lg" id="product_classify">
+                        <option>禮盒</option>
+                        <option>限定</option>
+                        <option>熱銷</option>
+                    </select>
+                    <label class="py-2" for="product_name">產品名稱</label>
+                    <input type="product_name" class="form-control" id="product_name" name="product_name" required>
+                    <div class="form-group py-2">
+                        <label for="product_context">產品內容</label>
+                        <textarea class="form-control" id="product_context" rows="3" name="product_context"></textarea>
+                    </div>
+                    <a href="{{ asset('/push') }}"><button type="submit" class="btn btn-primary">新增</button></a>
+                </div>
+            </div>
+        </form>
+    </div>
 
 
-    
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                let imageTagID = input.getAttribute("targetID")
+                let reader = new FileReader()
+                reader.onload = function (e) {
+                    let img = document.getElementById(imageTagID)
+                    img.setAttribute("src", e.target.result)
+                }
+                reader.readAsDataURL(input.files[0])
+            }
+        }
+    </script>
+
 </body>
+
 </html>
