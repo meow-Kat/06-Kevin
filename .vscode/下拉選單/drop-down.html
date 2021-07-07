@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .style-select{
+            width: 300px;
+            padding: 5px 10px;
+            background-color: rgb(99, 123, 189);
+            position: relative;
+            text-align: center;
+        }
+
+        .style-select-title1{
+            width: 100% ;
+            /* padding: 5px 10px;
+            background-color: rgb(99, 123, 189); */
+        }
+        ul{
+            width: 100%;
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            transform: translateY(100%);
+            background-color: brown;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="dino-input-field select custom-select style-select">
+        <label></label>
+        <span class="option-selected style-select-title1">雙面</span>
+        <ul class="select-options style-select-option" style="display: none;">
+            <li>單面</li>
+            <li>雙面</li>
+        </ul>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function (e) {
+            $('.custom-select').click(function (e) {
+                e.stopPropagation();
+                $('.select-options', this).slideToggle();
+            });
+
+            $('.select-options li').click(function (e) {
+                e.stopPropagation();
+                const text_inside = $(this).text();
+                $(this).parent().slideUp();
+                $(this).parent().prev().text(text_inside);
+            });
+
+            $(document).click(function (e) {
+                $('.select-options').slideUp();
+            });
+        });
+    </script>
+</body>
+
+</html>
