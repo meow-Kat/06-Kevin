@@ -199,7 +199,7 @@
         // 把時間切開來 命名min:命名sec
         let [min, sec] = time.split(':') // 5:43 => [54:3]
         return min * 60 + sec * 1 // *1 直接轉數字
-        //    處理的funtion ↓         ↓ 要幹嘛    ↓ 起始值0(可不寫)
+        //處理的funtion ↓         ↓ 要幹嘛    ↓ 起始值0(可不寫)
       }).reduce((prev, next) => prev + next, 0) // .reduce(() => {} , 0 ) 加總很厲害
       console.log(d);
 
@@ -212,7 +212,7 @@
 
     }
 
-    //for 跟 foreach 基本上一樣 但foreach是funtion是封裝的函示
+    //for 跟 foreach 基本上一樣 但foreach是funtion是封裝的函式
 
     // let XX
     // for(){ XX += }
